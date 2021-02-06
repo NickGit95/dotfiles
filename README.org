@@ -1,0 +1,16 @@
+#+TITLE: My Dot Files
+#+AUTHOR: NDS
+#+DESCRIPTION: My configuration files for linux
+
+My dotfiles, that's about it. All of them are managed by [[https://www.chezmoi.io/][chezmoi]].
+These dotfiles include configuration for:
+
+- [[https://qutebrowser.org/][Qutebrowser]] and vimium.
+- A home page for qute based on the one by Distro Tube (Shameless ripoff)
+- [[https://sw.kovidgoyal.net/kitty/][Kitty]] terminal emulator.
+- [[https://gnome-terminator.org/][Terminator]] terminal emulator.
+- [[https://github.com/hlissner/doom-emacs][Doom]] emacs.
+- VIM.
+- Bash and bash aliases.
+- Krita configuration and shortcuts.
+- KDE keyboard shortcuts.

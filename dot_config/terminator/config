@@ -1,0 +1,23 @@
+[global_config]
+  borderless = True
+  title_transmit_bg_color = "#26a269"
+  inactive_color_offset = 0.7050359712230215
+  suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.84
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 1000
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

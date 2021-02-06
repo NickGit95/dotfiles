@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div class="container">
+        <div id="clock"></div>
+        <div class="page-title">Some Bookmarks</div>
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">Linux stuff</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://www.linuxtoday.com/" target="_blank">LinuxToday</a>
+                    <a class="bookmark" href="https://www.linuxinsider.com/" target="_blank">LinuxInsider</a>
+                    <a class="bookmark" href="https://omgubuntu.co.uk/" target="_blank">OMG Ubuntu</a>
+                    <a class="bookmark" href="https://itsfoss.com/" target="_blank">It's Foss</a>
+                    <a class="bookmark" href="https://phoronix.com/" target="_blank">Phoronix</a>
+                    <a class="bookmark" href="https://www.gamingonlinux.com/" target="_blank">Gaming on linux</a>
+                    <a class="bookmark" href="https://wiki.archlinux.org/" target="_blank">Arch Wiki</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Cheat sheets/docs</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://gist.github.com/hjertnes/9e14416e8962ff5f03c6b9871945b165" target="_blank">Doom Emacs</a>
+                    <a class="bookmark" href="https://www.gnu.org/software/emacs/manual/html_node/eintr/" target="_blank">Emacs lisp</a>
+                    <a class="bookmark" href="https://devhints.io/bash" target="_blank">Bash scripting</a>
+                    <a class="bookmark" href="https://websitesetup.org/wp-content/uploads/2020/04/Python-Cheat-Sheet.pdf" target="_blank">Python</a>
+                    <a class="bookmark" href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Git</a>
+                    <a class="bookmark" href="https://docs.godotengine.org/en/3.2/getting_started/scripting/gdscript/gdscript_styleguide.html#" target="_blank">Gdscript Style</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+            <div class="bookmark-title">Random</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://boards.4channel.org/g/catalog" target="_blank">/g/</a>
+                    <a class="bookmark" href="https://reddit.com/r/unixporn" target="_blank">/r/unixporn</a>
+                    <a class="bookmark" href="https://reddit.com/r/smashbros" target="_blank">/r/smashbros</a>
+                    <a class="bookmark" href="https://mynintendonews.com/" target="_blank">Nintendo news</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get current time and format
+        getTime = () => {
+            let date = new Date(),
+                min = date.getMinutes(),
+                sec = date.getSeconds(),
+                hour = date.getHours();
+
+            return "" + 
+                (hour < 10 ? ("0" + hour) : hour) + ":" + 
+                (min < 10 ? ("0" + min) : min) + ":" + 
+                (sec < 10 ? ("0" + sec) : sec);
+        }
+
+        window.onload = () => {
+            // Set up the clock
+            document.getElementById("clock").innerHTML = getTime();
+            // Set clock interval to tick clock
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+        }
+    </script>
+</body>
+</html>

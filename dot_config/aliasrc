@@ -1,0 +1,29 @@
+#!/bin/sh
+##########################################
+#             _/  _/                     # 
+#    _/_/_/  _/        _/_/_/    _/_/_/  # 
+# _/    _/  _/  _/  _/    _/  _/_/       # 
+#_/    _/  _/  _/  _/    _/      _/_/    # 
+# _/_/_/  _/  _/    _/_/_/  _/_/_/       # 
+##########################################
+                                         
+
+alias \
+	myip="curl ipinfo.io/ip" \
+	vi="vim" \
+	untar="tar -zxvf" \
+	sha="shasum -a 256" \
+	duhere="sudo du -achd 1" \
+	cl="clear" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	mkd="mkdir -pv" \
+	shred="bleachbit -s" \
+	pdel="sudo pacman -Rsn" \
+	hdel="paru -Rns" \
+	dota="chezmoi -v add" \
+	dotcd="chezmoi cd" \
+	dote="chezmoi -v edit" \
+	dotd="chezmoi -v diff" \
+	dotap="chezmoi -v apply" \
+	orphans="pacman -Qtdq | sudo pacman -Rns -"
