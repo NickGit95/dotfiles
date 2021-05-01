@@ -9,48 +9,51 @@
 # Documentation:
 #   qute://help/configuring.html
 #   qute://help/settings.html
-# 
+#
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
 # Colors thanks to Dracula theme
 palette = {
-    'background': '#282a36',
-    'background-alt': '#282a36', 
-    'background-attention': '#181920',
-    'border': '#282a36',
-    'current-line': '#44475a',
-    'selection': '#44475a',
-    'foreground': '#f8f8f2',
-    'foreground-alt': '#e0e0e0',
-    'foreground-attention': '#ffffff',
-    'comment': '#6272a4',
-    'cyan': '#8be9fd',
-    'green': '#50fa7b',
-    'orange': '#ffb86c',
-    'pink': '#ff79c6',
-    'purple': '#bd93f9',
-    'red': '#ff5555',
-    'yellow': '#f1fa8c'
-}   
-
-spacing = {
-    'vertical': 5,
-    'horizontal': 5
+    "background": "#282a36",
+    "background-alt": "#282a36",
+    "background-attention": "#181920",
+    "border": "#282a36",
+    "current-line": "#44475a",
+    "selection": "#44475a",
+    "foreground": "#f8f8f2",
+    "foreground-alt": "#e0e0e0",
+    "foreground-attention": "#ffffff",
+    "comment": "#6272a4",
+    "cyan": "#8be9fd",
+    "green": "#50fa7b",
+    "orange": "#ffb86c",
+    "pink": "#ff79c6",
+    "purple": "#bd93f9",
+    "red": "#ff5555",
+    "yellow": "#f1fa8c",
 }
 
+spacing = {"vertical": 5, "horizontal": 5}
+
 padding = {
-    'top': spacing['vertical'],
-    'right': spacing['horizontal'],
-    'bottom': spacing['vertical'],
-    'left': spacing['horizontal']
+    "top": spacing["vertical"],
+    "right": spacing["horizontal"],
+    "bottom": spacing["vertical"],
+    "left": spacing["horizontal"],
 }
 
 
 # Aliases for commands. The keys of the given dictionary are the
 # aliases, while the values are the commands they map to.
 # Type: Dict
-c.aliases = {'q': 'close', 'qa': 'quit', 'w': 'session-save', 'wq': 'quit --save', 'wqa': 'quit --save'}
+c.aliases = {
+    "q": "close",
+    "qa": "quit",
+    "w": "session-save",
+    "wq": "quit --save",
+    "wqa": "quit --save",
+}
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -74,7 +77,7 @@ c.aliases = {'q': 'close', 'qa': 'quit', 'w': 'session-save', 'wq': 'quit --save
 #   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
 #   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 #   - never: Don't accept cookies at all.
-config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
+config.set("content.cookies.accept", "all", "chrome-devtools://*")
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -98,12 +101,12 @@ config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 #   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
 #   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 #   - never: Don't accept cookies at all.
-config.set('content.cookies.accept', 'never', 'devtools://*')
+config.set("content.cookies.accept", "never", "devtools://*")
 
 # Value to send in the `Accept-Language` header. Note that the value
 # read from JavaScript is always the global value.
 # Type: String
-config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io/*')
+config.set("content.headers.accept_language", "", "https://matchmaker.krunker.io/*")
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -119,7 +122,11 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}",
+    "https://web.whatsapp.com/",
+)
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -135,7 +142,11 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version} Edg/{upstream_browser_version}', 'https://accounts.google.com/*')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version} Edg/{upstream_browser_version}",
+    "https://accounts.google.com/*",
+)
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -151,96 +162,100 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36",
+    "https://*.slack.com/*",
+)
 
 # Load images automatically in web pages.
 # Type: Bool
-config.set('content.images', True, 'chrome-devtools://*')
+config.set("content.images", True, "chrome-devtools://*")
 
 # Load images automatically in web pages.
 # Type: Bool
-config.set('content.images', True, 'devtools://*')
+config.set("content.images", True, "devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'chrome-devtools://*')
+config.set("content.javascript.enabled", True, "chrome-devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'devtools://*')
+config.set("content.javascript.enabled", True, "devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'chrome://*/*')
+config.set("content.javascript.enabled", True, "chrome://*/*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'qute://*/*')
+config.set("content.javascript.enabled", True, "qute://*/*")
 
 # Number of commands to save in the command history. 0: no history / -1:
 # unlimited
 # Type: Int
 c.completion.cmd_history_max_items = 10
- 
+
 # Directory to save downloads to. If unset, a sensible OS-specific
 # default is used.
 # Type: Directory
-c.downloads.location.directory = '/home/nick/Downloads'
+c.downloads.location.directory = "/home/nick/Downloads"
 
 
 ## Background color of the completion widget category headers.
-c.colors.completion.category.bg = palette['background']
+c.colors.completion.category.bg = palette["background"]
 
 ## Bottom border color of the completion widget category headers.
-c.colors.completion.category.border.bottom = palette['border']
+c.colors.completion.category.border.bottom = palette["border"]
 
 ## Top border color of the completion widget category headers.
-c.colors.completion.category.border.top = palette['border']
+c.colors.completion.category.border.top = palette["border"]
 
 ## Foreground color of completion widget category headers.
-c.colors.completion.category.fg = palette['foreground']
+c.colors.completion.category.fg = palette["foreground"]
 
 ## Background color of the completion widget for even rows.
-c.colors.completion.even.bg = palette['background']
+c.colors.completion.even.bg = palette["background"]
 
 ## Background color of the completion widget for odd rows.
-c.colors.completion.odd.bg = palette['background-alt']
+c.colors.completion.odd.bg = palette["background-alt"]
 
 ## Text color of the completion widget.
-c.colors.completion.fg = palette['foreground']
+c.colors.completion.fg = palette["foreground"]
 
 ## Background color of the selected completion item.
-c.colors.completion.item.selected.bg = palette['selection']
+c.colors.completion.item.selected.bg = palette["selection"]
 
 ## Bottom border color of the selected completion item.
-c.colors.completion.item.selected.border.bottom = palette['selection']
+c.colors.completion.item.selected.border.bottom = palette["selection"]
 
 ## Top border color of the completion widget category headers.
-c.colors.completion.item.selected.border.top = palette['selection']
+c.colors.completion.item.selected.border.top = palette["selection"]
 
 ## Foreground color of the selected completion item.
-c.colors.completion.item.selected.fg = palette['foreground']
+c.colors.completion.item.selected.fg = palette["foreground"]
 
 ## Foreground color of the matched text in the completion.
-c.colors.completion.match.fg = palette['orange']
+c.colors.completion.match.fg = palette["orange"]
 
 ## Color of the scrollbar in completion view
-c.colors.completion.scrollbar.bg = palette['background']
+c.colors.completion.scrollbar.bg = palette["background"]
 
 ## Color of the scrollbar handle in completion view.
-c.colors.completion.scrollbar.fg = palette['foreground']
+c.colors.completion.scrollbar.fg = palette["foreground"]
 
 ## Background color for the download bar.
-c.colors.downloads.bar.bg = palette['background']
+c.colors.downloads.bar.bg = palette["background"]
 
 ## Background color for downloads with errors.
-c.colors.downloads.error.bg = palette['background']
+c.colors.downloads.error.bg = palette["background"]
 
 ## Foreground color for downloads with errors.
-c.colors.downloads.error.fg = palette['red']
+c.colors.downloads.error.fg = palette["red"]
 
 ## Color gradient stop for download backgrounds.
-c.colors.downloads.stop.bg = palette['background']
+c.colors.downloads.stop.bg = palette["background"]
 
 ## Color gradient interpolation system for download backgrounds.
 ## Type: ColorSystem
@@ -249,164 +264,164 @@ c.colors.downloads.stop.bg = palette['background']
 ##   - hsv: Interpolate in the HSV color system.
 ##   - hsl: Interpolate in the HSL color system.
 ##   - none: Don't show a gradient.
-c.colors.downloads.system.bg = 'none'
+c.colors.downloads.system.bg = "none"
 
 ## Background color for hints. Note that you can use a `rgba(...)` value
 ## for transparency.
-c.colors.hints.bg = palette['background']
+c.colors.hints.bg = palette["background"]
 
 ## Font color for hints.
-c.colors.hints.fg = palette['foreground']
+c.colors.hints.fg = palette["foreground"]
 
 ## Hints
-c.hints.border = '2px solid ' + palette['background-alt']
+c.hints.border = "2px solid " + palette["background-alt"]
 
 ## Font color for the matched part of hints.
-c.colors.hints.match.fg = palette['pink']
+c.colors.hints.match.fg = palette["pink"]
 
 ## Background color of the keyhint widget.
-c.colors.keyhint.bg = palette['background']
+c.colors.keyhint.bg = palette["background"]
 
 ## Text color for the keyhint widget.
-c.colors.keyhint.fg = palette['purple']
+c.colors.keyhint.fg = palette["purple"]
 
 ## Highlight color for keys to complete the current keychain.
-c.colors.keyhint.suffix.fg = palette['selection']
+c.colors.keyhint.suffix.fg = palette["selection"]
 
 ## Background color of an error message.
-c.colors.messages.error.bg = palette['background']
+c.colors.messages.error.bg = palette["background"]
 
 ## Border color of an error message.
-c.colors.messages.error.border = palette['background-alt']
+c.colors.messages.error.border = palette["background-alt"]
 
 ## Foreground color of an error message.
-c.colors.messages.error.fg = palette['red']
+c.colors.messages.error.fg = palette["red"]
 
 ## Background color of an info message.
-c.colors.messages.info.bg = palette['background']
+c.colors.messages.info.bg = palette["background"]
 
 ## Border color of an info message.
-c.colors.messages.info.border = palette['background-alt']
+c.colors.messages.info.border = palette["background-alt"]
 
 ## Foreground color an info message.
-c.colors.messages.info.fg = palette['comment']
+c.colors.messages.info.fg = palette["comment"]
 
 ## Background color of a warning message.
-c.colors.messages.warning.bg = palette['background']
+c.colors.messages.warning.bg = palette["background"]
 
 ## Border color of a warning message.
-c.colors.messages.warning.border = palette['background-alt']
+c.colors.messages.warning.border = palette["background-alt"]
 
 ## Foreground color a warning message.
-c.colors.messages.warning.fg = palette['red']
+c.colors.messages.warning.fg = palette["red"]
 
 ## Background color for prompts.
-c.colors.prompts.bg = palette['background']
+c.colors.prompts.bg = palette["background"]
 
 # ## Border used around UI elements in prompts.
-c.colors.prompts.border = '1px solid ' + palette['background-alt']
+c.colors.prompts.border = "1px solid " + palette["background-alt"]
 
 ## Foreground color for prompts.
-c.colors.prompts.fg = palette['cyan']
+c.colors.prompts.fg = palette["cyan"]
 
 ## Background color for the selected item in filename prompts.
-c.colors.prompts.selected.bg = palette['selection']
+c.colors.prompts.selected.bg = palette["selection"]
 
 ## Background color of the statusbar in caret mode.
-c.colors.statusbar.caret.bg = palette['background']
+c.colors.statusbar.caret.bg = palette["background"]
 
 ## Foreground color of the statusbar in caret mode.
-c.colors.statusbar.caret.fg = palette['orange']
+c.colors.statusbar.caret.fg = palette["orange"]
 
 ## Background color of the statusbar in caret mode with a selection.
-c.colors.statusbar.caret.selection.bg = palette['background']
+c.colors.statusbar.caret.selection.bg = palette["background"]
 
 ## Foreground color of the statusbar in caret mode with a selection.
-c.colors.statusbar.caret.selection.fg = palette['orange']
+c.colors.statusbar.caret.selection.fg = palette["orange"]
 
 ## Background color of the statusbar in command mode.
-c.colors.statusbar.command.bg = palette['background']
+c.colors.statusbar.command.bg = palette["background"]
 
 ## Foreground color of the statusbar in command mode.
-c.colors.statusbar.command.fg = palette['pink']
+c.colors.statusbar.command.fg = palette["pink"]
 
 ## Background color of the statusbar in private browsing + command mode.
-c.colors.statusbar.command.private.bg = palette['background']
+c.colors.statusbar.command.private.bg = palette["background"]
 
 ## Foreground color of the statusbar in private browsing + command mode.
-c.colors.statusbar.command.private.fg = palette['foreground-alt']
+c.colors.statusbar.command.private.fg = palette["foreground-alt"]
 
 ## Background color of the statusbar in insert mode.
-c.colors.statusbar.insert.bg = palette['background-attention']
+c.colors.statusbar.insert.bg = palette["background-attention"]
 
 ## Foreground color of the statusbar in insert mode.
-c.colors.statusbar.insert.fg = palette['foreground-attention']
+c.colors.statusbar.insert.fg = palette["foreground-attention"]
 
 ## Background color of the statusbar.
-c.colors.statusbar.normal.bg = palette['background']
+c.colors.statusbar.normal.bg = palette["background"]
 
 ## Foreground color of the statusbar.
-c.colors.statusbar.normal.fg = palette['foreground']
+c.colors.statusbar.normal.fg = palette["foreground"]
 
 ## Background color of the statusbar in passthrough mode.
-c.colors.statusbar.passthrough.bg = palette['background']
+c.colors.statusbar.passthrough.bg = palette["background"]
 
 ## Foreground color of the statusbar in passthrough mode.
-c.colors.statusbar.passthrough.fg = palette['orange']
+c.colors.statusbar.passthrough.fg = palette["orange"]
 
 ## Background color of the statusbar in private browsing mode.
-c.colors.statusbar.private.bg = palette['background-alt']
+c.colors.statusbar.private.bg = palette["background-alt"]
 
 ## Foreground color of the statusbar in private browsing mode.
-c.colors.statusbar.private.fg = palette['foreground-alt']
+c.colors.statusbar.private.fg = palette["foreground-alt"]
 
 ## Background color of the progress bar.
-c.colors.statusbar.progress.bg = palette['background']
+c.colors.statusbar.progress.bg = palette["background"]
 
 ## Foreground color of the URL in the statusbar on error.
-c.colors.statusbar.url.error.fg = palette['red']
+c.colors.statusbar.url.error.fg = palette["red"]
 
 ## Default foreground color of the URL in the statusbar.
-c.colors.statusbar.url.fg = palette['foreground']
+c.colors.statusbar.url.fg = palette["foreground"]
 
 ## Foreground color of the URL in the statusbar for hovered links.
-c.colors.statusbar.url.hover.fg = palette['cyan']
+c.colors.statusbar.url.hover.fg = palette["cyan"]
 
 ## Foreground color of the URL in the statusbar on successful load
-c.colors.statusbar.url.success.http.fg = palette['green']
+c.colors.statusbar.url.success.http.fg = palette["green"]
 
 ## Foreground color of the URL in the statusbar on successful load
-c.colors.statusbar.url.success.https.fg = palette['green']
+c.colors.statusbar.url.success.https.fg = palette["green"]
 
 ## Foreground color of the URL in the statusbar when there's a warning.
-c.colors.statusbar.url.warn.fg = palette['yellow']
+c.colors.statusbar.url.warn.fg = palette["yellow"]
 
 ## Status bar padding
 c.statusbar.padding = padding
 
 ## Background color of the tab bar.
 ## Type: QtColor
-c.colors.tabs.bar.bg = palette['selection']
+c.colors.tabs.bar.bg = palette["selection"]
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
-c.colors.tabs.even.bg = palette['selection']
+c.colors.tabs.even.bg = palette["selection"]
 
 ## Foreground color of unselected even tabs.
 ## Type: QtColor
-c.colors.tabs.even.fg = palette['foreground']
+c.colors.tabs.even.fg = palette["foreground"]
 
 ## Color for the tab indicator on errors.
 ## Type: QtColor
-c.colors.tabs.indicator.error = palette['red']
+c.colors.tabs.indicator.error = palette["red"]
 
 ## Color gradient start for the tab indicator.
 ## Type: QtColor
-c.colors.tabs.indicator.start = palette['orange']
+c.colors.tabs.indicator.start = palette["orange"]
 
 ## Color gradient end for the tab indicator.
 ## Type: QtColor
-c.colors.tabs.indicator.stop = palette['green']
+c.colors.tabs.indicator.stop = palette["green"]
 
 ## Color gradient interpolation system for the tab indicator.
 ## Type: ColorSystem
@@ -415,37 +430,37 @@ c.colors.tabs.indicator.stop = palette['green']
 ##   - hsv: Interpolate in the HSV color system.
 ##   - hsl: Interpolate in the HSL color system.
 ##   - none: Don't show a gradient.
-c.colors.tabs.indicator.system = 'none'
+c.colors.tabs.indicator.system = "none"
 
 ## Background color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.bg = palette['selection']
+c.colors.tabs.odd.bg = palette["selection"]
 
 ## Foreground color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.fg = palette['foreground']
+c.colors.tabs.odd.fg = palette["foreground"]
 
 # ## Background color of selected even tabs.
 # ## Type: QtColor
-c.colors.tabs.selected.even.bg = palette['background']
+c.colors.tabs.selected.even.bg = palette["background"]
 
 # ## Foreground color of selected even tabs.
 # ## Type: QtColor
-c.colors.tabs.selected.even.fg = palette['foreground']
+c.colors.tabs.selected.even.fg = palette["foreground"]
 
 # ## Background color of selected odd tabs.
 # ## Type: QtColor
-c.colors.tabs.selected.odd.bg = palette['background']
+c.colors.tabs.selected.odd.bg = palette["background"]
 
 # ## Foreground color of selected odd tabs.
 # ## Type: QtColor
-c.colors.tabs.selected.odd.fg = palette['foreground']
+c.colors.tabs.selected.odd.fg = palette["foreground"]
 
 ## Tab padding
 c.tabs.padding = padding
 c.tabs.indicator.width = 1
 c.tabs.favicons.scale = 1
- 
+
 # Default font families to use. Whenever "default_family" is used in a
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
@@ -457,10 +472,10 @@ c.fonts.default_family = '"Source Code Pro"'
 # either a float value with a "pt" suffix, or an integer value with a
 # "px" suffix.
 # Type: String
-c.fonts.default_size = '10pt'
+c.fonts.default_size = "10pt"
 
 # Hint font size
-c.fonts.hints = '11pt'
+c.fonts.hints = "11pt"
 
 # Font used in the completion widget.
 # Type: Font
@@ -472,7 +487,7 @@ c.fonts.debug_console = '10pt "Source Code Pro"'
 
 # Font used for prompts.
 # Type: Font
-c.fonts.prompts = 'default_size sans-serif'
+c.fonts.prompts = "default_size sans-serif"
 
 # Font used in the statusbar.
 # Type: Font
@@ -495,7 +510,7 @@ c.scrolling.smooth = True
 #   - tabs: Current active tab, e.g. `2`.
 #   - keypress: Display pressed keys when composing a vi command.
 #   - progress: Progress bar for the current page loading.
-c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
+c.statusbar.widgets = ["keypress", "url", "scroll", "history", "tabs", "progress"]
 
 # Render all web contents using a dark theme. Example configurations
 # from Chromium's `chrome://flags`:  - "With simple HSL/CIELAB/RGB-based
@@ -525,36 +540,50 @@ c.content.private_browsing = True
 # key. Note that when a key is bound (via `bindings.default` or
 # `bindings.commands`), the mapping is ignored.
 # Type: Dict
-c.bindings.key_mappings = {'<Ctrl+6>': '<Ctrl+^>', '<Ctrl+Enter>': '<Ctrl+Return>', '<Ctrl+i>': '<Tab>', '<Ctrl+j>': '<Return>', '<Ctrl+m>': '<Return>', '<Ctrl+[>': '<Escape>', '<Enter>': '<Return>', '<Shift+Enter>': '<Return>', '<Shift+Return>': '<Return>', '<Ctrl+d>': 'd'}
+c.bindings.key_mappings = {
+    "<Ctrl+6>": "<Ctrl+^>",
+    "<Ctrl+Enter>": "<Ctrl+Return>",
+    "<Ctrl+i>": "<Tab>",
+    "<Ctrl+j>": "<Return>",
+    "<Ctrl+m>": "<Return>",
+    "<Ctrl+[>": "<Escape>",
+    "<Enter>": "<Return>",
+    "<Shift+Enter>": "<Return>",
+    "<Shift+Return>": "<Return>",
+    "<Ctrl+d>": "d",
+}
 
 # Hint characters
-config.set('hints.chars', 'qwertasdfgzxcvb')
+config.set("hints.chars", "qwertasdfgzxcvb")
 
 # Search engines
 c.url.searchengines = {
-    'DEFAULT': 'https://duckduckgo.com/?q={}',
-    'am': 'https://www.amazon.com/s?k={}',
-    'sx': 'https://searx.be/search?q={}',
-    'aw': 'https://wiki.archlinux.org/?search={}',
-    're': 'https://www.reddit.com/r/{}',
-    'ub': 'https://www.urbandictionary.com/define.php?term={}',
-    'wiki': 'https://en.wikipedia.org/wiki/{}',
-    'qw': 'https://www.qwant.com/?q={}',
-    'sp': 'https://www.startpage.com/do/dsearch?query={}',
-    'wy': 'https://wiby.me/?q={}'
+    "DEFAULT": "https://duckduckgo.com/?q={}",
+    "am": "https://www.amazon.com/s?k={}",
+    "sx": "https://searx.be/search?q={}",
+    "aw": "https://wiki.archlinux.org/?search={}",
+    "re": "https://www.reddit.com/r/{}",
+    "ub": "https://www.urbandictionary.com/define.php?term={}",
+    "wiki": "https://en.wikipedia.org/wiki/{}",
+    "qw": "https://www.qwant.com/?q={}",
+    "sp": "https://www.startpage.com/do/dsearch?query={}",
+    "wy": "https://wiby.me/?q={}",
 }
 
 # Start page
-c.url.default_page = 'file:///home/nick/.config/qutebrowser/homepage/homepage.html'
-c.url.start_pages = [ c.url.default_page ]
+c.url.default_page = "file:///home/nick/.config/qutebrowser/homepage/homepage.html"
+c.url.start_pages = [c.url.default_page]
 
 # key binds
-config.bind('z', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
-config.bind('x', 'tab-close')
-config.bind('X', 'undo')
-config.bind('gt', 'tab-next')
-config.bind('gT', 'tab-prev')
-config.bind('d', 'scroll-page 0 0.5')
-config.bind('u', 'scroll-page 0 -0.5')
-config.bind('yf', 'hint links yank')
-config.bind('<Ctrl+d>', 'history-clear')
+config.bind(
+    "z",
+    "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
+)
+config.bind("x", "tab-close")
+config.bind("X", "undo")
+config.bind("gt", "tab-next")
+config.bind("gT", "tab-prev")
+config.bind("d", "scroll-page 0 0.5")
+config.bind("u", "scroll-page 0 -0.5")
+config.bind("yf", "hint links yank")
+config.bind("<Ctrl+d>", "history-clear")
