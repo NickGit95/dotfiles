@@ -10,6 +10,7 @@ These dotfiles include configuration for:
 - [[https://sw.kovidgoyal.net/kitty/][Kitty]] terminal emulator.
 - [[https://gnome-terminator.org/][Terminator]] terminal emulator.
 - [[https://github.com/hlissner/doom-emacs][Doom]] emacs.
+- [[https://github.com/makeworld-the-better-one/amfora][Amfora]] gemini client.
 - VIM and Neovim.
 - Bash and bash aliases.
 - Krita configuration and shortcuts.
