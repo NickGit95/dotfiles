@@ -17,13 +17,6 @@ wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
 
 
-### EXPORT variables
-export TERM="xterm-256color"
-export HISTCONTROL=ignoredups:erasedups
-export ALTERNATE_EDITOR=""
-export EDITOR="nvim"
-export VISUAL="emacsclient -c -a emacs"
-
 ### SHOPT
 shopt -s cdspell
 shopt -s cmdhist
@@ -32,6 +25,25 @@ shopt -s histappend
 shopt -s expand_aliases
 shopt -s checkwinsize
 
+### EXPORT variables
+export TERM="xterm-256color"
+export HISTCONTROL=ignoredups:erasedups
+export ALTERNATE_EDITOR=""
+export EDITOR="nvim"
+export VISUAL="emacsclient -c -a emacs"
+
+# Set the export path
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.emacs.d/bin" ] ;
+  then PATH="$HOME/.emacs.d/bin:$PATH"
+fi
 
 # Default changes
 # If not running interactively, don't do anything
@@ -53,17 +65,3 @@ function bash_prompt(){
     PS1=${cyn}'$(git_branch)'${pur}' \w'${grn}' \$ '${clr}
 }
 bash_prompt
-
-
-# Set the export path
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "$HOME/.emacs.d/bin" ] ;
-  then PATH="$HOME/.emacs.d/bin:$PATH"
-fi
