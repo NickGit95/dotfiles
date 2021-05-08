@@ -18,7 +18,7 @@ alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	mkd="mkdir -pv" \
-	shred="bleachbit -s" \
+	shred="shred -u" \
 	pdel="sudo pacman -Rsn" \
 	hdel="paru -Rns" \
 	dota="chezmoi -v add" \
@@ -26,4 +26,6 @@ alias \
 	dote="chezmoi -v edit" \
 	dotd="chezmoi -v diff" \
 	dotap="chezmoi -v apply" \
+	pc="pass -c" \
+	potp="pass otp -c" \
 	orphans="pacman -Qtdq | sudo pacman -Rns -"

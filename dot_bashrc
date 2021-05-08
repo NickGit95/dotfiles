@@ -1,8 +1,8 @@
 #############################################
-#88""Yb    db    .dP"Y8 88  88 88""Yb  dP""b8 
-#88__dP   dPYb   `Ybo." 88  88 88__dP dP   `" 
-#88""Yb  dP__Yb  o.`Y8b 888888 88"Yb  Yb      
-#88oodP dP""""Yb 8bodP' 88  88 88  Yb  YboodP 
+#88""Yb    db    .dP"Y8 88  88 88""Yb  dP""b8
+#88__dP   dPYb   `Ybo." 88  88 88__dP dP   `"
+#88""Yb  dP__Yb  o.`Y8b 888888 88"Yb  Yb
+#88oodP dP""""Yb 8bodP' 88  88 88  Yb  YboodP
 #############################################
 
 # Colors as variables
@@ -15,6 +15,23 @@ pur='\[\033[01;35m\]'   # Purple
 cyn='\[\033[01;36m\]'   # Cyan
 wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
+
+
+### EXPORT variables
+export TERM="xterm-256color"
+export HISTCONTROL=ignoredups:erasedups
+export ALTERNATE_EDITOR=""
+export EDITOR="nvim"
+export VISUAL="emacsclient -c -a emacs"
+
+### SHOPT
+shopt -s cdspell
+shopt -s cmdhist
+shopt -s dotglob
+shopt -s histappend
+shopt -s expand_aliases
+shopt -s checkwinsize
+
 
 # Default changes
 # If not running interactively, don't do anything
@@ -33,10 +50,20 @@ function git_branch() {
 
 # Set the prompt.
 function bash_prompt(){
-    PS1=${blu}'$(git_branch)'${pur}' \w'${grn}' \$ '${clr}
+    PS1=${cyn}'$(git_branch)'${pur}' \w'${grn}' \$ '${clr}
 }
 bash_prompt
 
 
 # Set the export path
-export PATH=$PATH:$HOME/.emacs.d/bin:$HOME/.local/bin
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.emacs.d/bin" ] ;
+  then PATH="$HOME/.emacs.d/bin:$PATH"
+fi

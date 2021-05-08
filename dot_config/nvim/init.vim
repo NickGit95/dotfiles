@@ -40,3 +40,6 @@ colorscheme dracula
 
 " Always show statusline
 set laststatus=2
+
+" Delete trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
