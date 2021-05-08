@@ -17,7 +17,7 @@ wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
 
 
-### SHOPT
+# SHOPT
 shopt -s cdspell
 shopt -s cmdhist
 shopt -s dotglob
@@ -25,12 +25,15 @@ shopt -s histappend
 shopt -s expand_aliases
 shopt -s checkwinsize
 
-### EXPORT variables
+# EXPORT variables
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
 export ALTERNATE_EDITOR=""
 export EDITOR="nvim"
 export VISUAL="emacsclient -c -a emacs"
+
+# Ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
 
 # Set the export path
 if [ -d "$HOME/.bin" ] ;

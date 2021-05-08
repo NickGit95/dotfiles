@@ -63,6 +63,9 @@
 ;; Runs the function `lsp--gdscript-ignore-errors` around `lsp--get-message-type` to suppress unknown notification errors.
 (advice-add #'lsp--get-message-type :around #'lsp--gdscript-ignore-errors)
 
+;; Delete trailing whitespace
+(add-hook! 'before-save-hook #'delete-trailing-whitespace)
+
 ;; Disable comment continuation with the o/O keys
 ;; (setq +evil-want-o/O-to-continue-comments nil)
 
