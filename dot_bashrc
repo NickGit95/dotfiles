@@ -56,6 +56,9 @@ alias ls='ls --color=auto'
 # Load aliases
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+# Load auto completition for pass
+[ -f "/usr/share/bash-completion/completions/pass" ] && source "/usr/share/bash-completion/completions/pass"
+
 # Function to display the current git branch on the bash prompt
 function git_branch() {
     if [ -d .git ] ; then
