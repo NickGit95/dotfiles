@@ -560,13 +560,14 @@ config.set("hints.chars", "qwertasdfgzxcvb")
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}",
     "am": "https://www.amazon.com/s?k={}",
-    "sx": "https://searx.be/search?q={}",
     "aw": "https://wiki.archlinux.org/?search={}",
+    "br": "https://search.brave.com/?search?q={}",
+    "qw": "https://www.qwant.com/?q={}",
     "re": "https://www.reddit.com/r/{}",
+    "sp": "https://www.startpage.com/do/dsearch?query={}",
+    "sx": "https://searx.be/search?q={}",
     "ub": "https://www.urbandictionary.com/define.php?term={}",
     "wiki": "https://en.wikipedia.org/wiki/{}",
-    "qw": "https://www.qwant.com/?q={}",
-    "sp": "https://www.startpage.com/do/dsearch?query={}",
     "wy": "https://wiby.me/?q={}",
 }
 
