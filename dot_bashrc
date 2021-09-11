@@ -6,16 +6,15 @@
 #############################################
 
 # Colors as variables
-blk='\[\033[01;30m\]'   # Black
-red='\[\033[01;31m\]'   # Red
-grn='\[\033[01;32m\]'   # Green
-ylw='\[\033[01;33m\]'   # Yellow
-blu='\[\033[01;34m\]'   # Blue
-pur='\[\033[01;35m\]'   # Purple
-cyn='\[\033[01;36m\]'   # Cyan
-wht='\[\033[01;37m\]'   # White
-clr='\[\033[00m\]'      # Reset
-
+blk='\[\033[01;30m\]' # Black
+red='\[\033[01;31m\]' # Red
+grn='\[\033[01;32m\]' # Green
+ylw='\[\033[01;33m\]' # Yellow
+blu='\[\033[01;34m\]' # Blue
+pur='\[\033[01;35m\]' # Purple
+cyn='\[\033[01;36m\]' # Cyan
+wht='\[\033[01;37m\]' # White
+clr='\[\033[00m\]'    # Reset
 
 # SHOPT
 shopt -s cdspell
@@ -36,16 +35,25 @@ export VISUAL="emacsclient -c -a emacs"
 bind "set completion-ignore-case on"
 
 # Set the export path
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
+if [ -d "$HOME/.bin" ]; then
+	PATH="$HOME/.bin:$PATH"
 fi
 
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ -d "$HOME/.emacs.d/bin" ] ;
-  then PATH="$HOME/.emacs.d/bin:$PATH"
+if [ -d "$HOME/.emacs.d/bin" ]; then
+	PATH="$HOME/.emacs.d/bin:$PATH"
+fi
+
+if [ -d "$HOME/go" ]; then
+	export GOPATH="$HOME/go"
+	PATH="$GOPATH/bin:$PATH"
+fi
+
+if [ -d "/usr/local/go" ]; then
+	PATH="/usr/local/go/bin:$PATH"
 fi
 
 # Default changes
@@ -61,13 +69,13 @@ alias ls='ls --color=auto'
 
 # Function to display the current git branch on the bash prompt
 function git_branch() {
-    if [ -d .git ] ; then
-        printf "%s" "($(git branch 2> /dev/null | awk '/\*/{print $2}'))";
-    fi
+	if [ -d .git ]; then
+		printf "%s" "($(git branch 2>/dev/null | awk '/\*/{print $2}'))"
+	fi
 }
 
 # Set the prompt.
-function bash_prompt(){
-    PS1=${cyn}'$(git_branch)'${pur}' \w'${grn}' \$ '${clr}
+function bash_prompt() {
+	PS1=${cyn}'$(git_branch)'${pur}' \w'${grn}' \$ '${clr}
 }
 bash_prompt

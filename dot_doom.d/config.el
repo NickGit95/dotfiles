@@ -1,6 +1,6 @@
 ;; Set PATH variable
-(setenv "PATH" (concat (getenv "PATH") ":/home/nick/.local/bin"))
-(setq exec-path (append exec-path '(":/home/nick/.local/bin")))
+(setenv "PATH" (concat (getenv "PATH") ":/home/nick/.local/bin" ":/home/nick/go/bin" ":/usr/local/go/bin"))
+(setq exec-path (append exec-path '("/home/nick/.local/bin") '("/home/nick/go/bin") '("/usr/local/go/bin")))
 (setq shell-file-name "bash")
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
