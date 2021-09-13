@@ -7,29 +7,28 @@
 # _/_/_/  _/  _/    _/_/_/  _/_/_/       #
 ##########################################
 
-
 alias \
-	myip="curl ipinfo.io/ip" \
-	vi="vim" \
-	untar="tar -zxvf" \
-	sha="shasum -a 256" \
-	duhere="sudo du -achd 1" \
-	cl="clear" \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	mkd="mkdir -pv" \
-	shred="shred -u" \
-	pdel="sudo pacman -Rsn" \
-	hdel="paru -Rns" \
-	dota="chezmoi -v add" \
-	dotcd="chezmoi cd" \
-	dote="chezmoi -v edit" \
-	dotd="chezmoi -v diff" \
-	dotap="chezmoi -v apply" \
-	pc="pass -c" \
-	potp="pass otp -c" \
-	gita="git add ." \
-	gitc="git commit -m" \
-	gitca="git commit --amend --no-edit" \
-	gitp="git push" \
-	orphans="pacman -Qtdq | sudo pacman -Rns -"
+    myip="curl ipinfo.io/ip" \
+    vi="vim" \
+    untar="tar -zxvf" \
+    sha="shasum -a 256" \
+    duhere="sudo du -achd 1" \
+    cl="clear" \
+    cp="cp -iv" \
+    mv="mv -iv" \
+    mkd="mkdir -pv" \
+    shred="shred -u" \
+    pdel="sudo pacman -Rsn" \
+    hdel="paru -Rns" \
+    dota="chezmoi -v add" \
+    dotcd="chezmoi cd" \
+    dote="chezmoi -v edit" \
+    dotd="chezmoi -v diff" \
+    dotap="chezmoi -v apply" \
+    pc="pass -c" \
+    potp="pass otp -c" \
+    gita="git add ." \
+    gitc="git commit -m" \
+    gitca="git commit --amend --no-edit" \
+    gitp="git push" \
+    orphans="pacman -Qtdq | sudo pacman -Rns -"

@@ -33,6 +33,7 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
+;; Remove format with lsp
 (setq +format-with-lsp nil)
 
 ;; Exit insert mode by pressing j and then j quickly
