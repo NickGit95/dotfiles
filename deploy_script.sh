@@ -11,7 +11,21 @@ yesno() {
 }
 
 # Install basic programs
-sudo pacman -Sy --noconfirm kitty vim neovim emacs chezmoi qutebrowser ripgrep fd shfmt wget bash-language-server shellcheck
+sudo pacman -Sy --noconfirm kitty vim neovim emacs chezmoi qutebrowser ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es
+
+# Install optional programs
+install_opt_pac=$(yesno "Install optional programs?")
+if [[ $install_opt_pac == "yes" ]]; then
+    (
+        cd /tmp
+        git clone https://aur.archlinux.org/paru.git
+        cd paru
+        makepkg -si
+    )
+    printf "\n Paru (AUR helper) installed!"
+    sudo pacman -Sy --noconfirm lutris steam tldr wget zip unzip pass pass-otp neofetch bleachbit virt-manager
+    paru -S brave-bin freetube discord_arch_electron librewolf-bin proton-ge-custom-bin
+fi
 
 # Install go and some utilities
 install_go=$(yesno "Install go and utilities?")
@@ -27,6 +41,7 @@ if [[ $install_go == "yes" ]]; then
     /usr/local/go/bin/go install golang.org/x/tools/cmd/goimports@latest
     /usr/local/go/bin/go install golang.org/x/tools/cmd/gorename@latest
     /usr/local/go/bin/go install golang.org/x/tools/cmd/guru@latest
+    /usr/local/go/bin/go install golang.org/x/tools/gopls@latest
     printf "\nGolang utilities installed!"
 fi
 
@@ -35,7 +50,9 @@ install_python=$(yesno "Install python utilities?")
 echo "$install_python"
 if [[ $install_python == "yes" ]]; then
     sudo pacman -Sy --noconfirm python-black pyright python-pip
-    python -m pip install pylint
+    sudo python -m pip install pylint
+    sudo python -m pip install pytest
+    sudo python -m pip install pipenv
     printf "\nPython utilities installed!"
 fi
 
