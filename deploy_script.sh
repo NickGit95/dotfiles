@@ -1,21 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-yesno() {
-    read -r -p "$1 [y/N] "
-    if [[ $REPLY == [yY] ]]; then
-        echo "yes"
-    else
-        echo "no"
-    fi
-}
-
 # Install basic programs
 sudo pacman -Sy --noconfirm kitty vim neovim emacs chezmoi qutebrowser ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es
 
+# Install fonts
+sudo pacman -Sy --noconfirm ttf-ubuntu-font-family adobe-source-sans-fonts adobe-source-han-sans-jp-fonts ttf-font-awesome
+
 # Install optional programs
-install_opt_pac=$(yesno "Install optional programs?")
-if [[ $install_opt_pac == "yes" ]]; then
+read -r -p "Install optional programs? [y/N] "
+if [[ $REPLY == [yY] ]]; then
     (
         cd /tmp
         git clone https://aur.archlinux.org/paru.git
@@ -28,8 +22,8 @@ if [[ $install_opt_pac == "yes" ]]; then
 fi
 
 # Install go and some utilities
-install_go=$(yesno "Install go and utilities?")
-if [[ $install_go == "yes" ]]; then
+read -r -p "Install go and utilities? "
+if [[ $REPLY == [yY] ]]; then
     wget https://golang.org/dl/go1.17.1.linux-amd64.tar.gz -O /tmp/go.tar.gz
     [[ -e "/tmp/go.tar.gz" ]] && rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
     /usr/local/go/bin/go version
@@ -46,9 +40,8 @@ if [[ $install_go == "yes" ]]; then
 fi
 
 # Install some python utilities
-install_python=$(yesno "Install python utilities?")
-echo "$install_python"
-if [[ $install_python == "yes" ]]; then
+read -r -p "Install python utilities? "
+if [[ $REPLY == [yY] ]]; then
     sudo pacman -Sy --noconfirm python-black pyright python-pip
     sudo python -m pip install pylint
     sudo python -m pip install pytest
