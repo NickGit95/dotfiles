@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Install basic utilities (qtile)
+read -n 1 -r -p "Install basic programs for qtile? [y/N] "
+echo
+[[ $REPLY == [yY] ]] && sudo pacman -Sy --noconfirm polkit seahorse lxsession-gtk3 picom gnome-keyring slock network-manager-applet volumeicon pipewire pipewire-alsa pipewire-pulse
+
 # Install basic programs
-sudo pacman -Sy --noconfirm kitty vim neovim emacs chezmoi qutebrowser ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es
+sudo pacman -Sy --noconfirm kitty vim neovim emacs chezmoi qutebrowser qtile ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es mpv pass pass-otp
 
 # Install fonts
-sudo pacman -Sy --noconfirm ttf-ubuntu-font-family adobe-source-sans-fonts adobe-source-han-sans-jp-fonts ttf-font-awesome
+sudo pacman -Sy --noconfirm ttf-ubuntu-font-family adobe-source-sans-fonts adobe-source-han-sans-jp-fonts ttf-nerd-fonts-symbols
 
 # Install optional programs
-read -r -p "Install optional programs? [y/N] "
+read -n 1 -r -p "Install optional programs? [y/N] "
+echo
 if [[ $REPLY == [yY] ]]; then
     (
         cd /tmp
@@ -17,12 +23,13 @@ if [[ $REPLY == [yY] ]]; then
         makepkg -si
     )
     printf "\n Paru (AUR helper) installed!"
-    sudo pacman -Sy --noconfirm lutris steam tldr wget zip unzip pass pass-otp neofetch bleachbit virt-manager
-    paru -S brave-bin freetube discord_arch_electron librewolf-bin proton-ge-custom-bin
+    sudo pacman -Sy --noconfirm lutris steam tldr wget zip unzip neofetch bleachbit virt-manager
+    paru -S brave-bin freetube discord-canary-electron-bin librewolf-bin proton-ge-custom-bin
 fi
 
 # Install go and some utilities
-read -r -p "Install go and utilities? "
+read -n 1 -r -p "Install go and utilities? [y/N] "
+echo
 if [[ $REPLY == [yY] ]]; then
     wget https://golang.org/dl/go1.17.1.linux-amd64.tar.gz -O /tmp/go.tar.gz
     [[ -e "/tmp/go.tar.gz" ]] && rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
@@ -40,7 +47,8 @@ if [[ $REPLY == [yY] ]]; then
 fi
 
 # Install some python utilities
-read -r -p "Install python utilities? "
+read -n 1 -r -p "Install python utilities? [y/N]"
+echo
 if [[ $REPLY == [yY] ]]; then
     sudo pacman -Sy --noconfirm python-black pyright python-pip
     sudo python -m pip install pylint
@@ -50,9 +58,17 @@ if [[ $REPLY == [yY] ]]; then
 fi
 
 # Install some dotfiles
-chezmoi init https://github.com/NickGit95/dotfiles.git
-chezmoi apply
+read -n 1 -r -p "Configure dotfiles? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    chezmoi init https://github.com/NickGit95/dotfiles.git
+    chezmoi apply
+fi
 
 # Install doom emacs
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
+read -n 1 -r -p "Configure doom emacs? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    git clone --depth 1 https://github.com/hlissner/doom-emacs "$HOME"/.emacs.d
+    "$HOME"/.emacs.d/bin/doom install
+fi

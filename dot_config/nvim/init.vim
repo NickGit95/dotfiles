@@ -10,7 +10,15 @@
 set number relativenumber
 set shiftwidth=4
 set t_Co=256
+set incsearch
+set hidden
+set nobackup
+set noswapfile
+
 syntax enable
+
+" Always show statusline
+set laststatus=2
 
 " Map jj to Esc
 imap jj <Esc>
@@ -37,9 +45,6 @@ let g:lightline = {
   \ }
 set termguicolors
 colorscheme dracula
-
-" Always show statusline
-set laststatus=2
 
 " Delete trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
