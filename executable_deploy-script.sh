@@ -4,13 +4,13 @@ set -euo pipefail
 # Install basic utilities (qtile)
 read -n 1 -r -p "Install basic programs for qtile? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -Sy --noconfirm polkit seahorse lxsession-gtk3 picom gnome-keyring slock network-manager-applet volumeicon pipewire pipewire-alsa pipewire-pulse
+[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm polkit seahorse lxsession-gtk3 picom gnome-keyring slock network-manager-applet pipewire pipewire-alsa alsa-utils pipewire-pulse rofi
 
 # Install basic programs
-sudo pacman -Sy --noconfirm kitty vim neovim emacs chezmoi qutebrowser qtile ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es mpv pass pass-otp
+sudo pacman -S --noconfirm kitty vim neovim emacs chezmoi qutebrowser qtile ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es mpv pass pass-otp pairus-icon-theme
 
 # Install fonts
-sudo pacman -Sy --noconfirm ttf-ubuntu-font-family adobe-source-sans-fonts adobe-source-han-sans-jp-fonts ttf-nerd-fonts-symbols
+sudo pacman -S --noconfirm ttf-ubuntu-font-family adobe-source-sans-fonts adobe-source-han-sans-jp-fonts ttf-nerd-fonts-symbols
 
 # Install optional programs
 read -n 1 -r -p "Install optional programs? [y/N] "
@@ -23,7 +23,7 @@ if [[ $REPLY == [yY] ]]; then
         makepkg -si
     )
     printf "\n Paru (AUR helper) installed!"
-    sudo pacman -Sy --noconfirm lutris steam tldr wget zip unzip neofetch bleachbit virt-manager
+    sudo pacman -S --noconfirm lutris steam tldr wget zip unzip neofetch bleachbit virt-manager
     paru -S brave-bin freetube discord-canary-electron-bin librewolf-bin proton-ge-custom-bin
 fi
 
@@ -50,7 +50,7 @@ fi
 read -n 1 -r -p "Install python utilities? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
-    sudo pacman -Sy --noconfirm python-black pyright python-pip
+    sudo pacman -S --noconfirm python-black pyright python-pip
     sudo python -m pip install pylint
     sudo python -m pip install pytest
     sudo python -m pip install pipenv
@@ -72,3 +72,5 @@ if [[ $REPLY == [yY] ]]; then
     git clone --depth 1 https://github.com/hlissner/doom-emacs "$HOME"/.emacs.d
     "$HOME"/.emacs.d/bin/doom install
 fi
+
+sudo pacman -Syu

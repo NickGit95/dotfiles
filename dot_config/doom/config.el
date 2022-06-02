@@ -42,6 +42,10 @@
   :custom
   (lsp-diagnostics-provider :none))
 
+;; Global auto revert
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+
 ;; Exit insert mode by pressing j and then j quickly
 (setq key-chord-two-keys-delay 0.5)
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
