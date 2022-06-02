@@ -7,7 +7,7 @@ echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm polkit seahorse lxsession-gtk3 picom gnome-keyring slock network-manager-applet pipewire pipewire-alsa alsa-utils pipewire-pulse rofi
 
 # Install basic programs
-sudo pacman -S --noconfirm kitty vim neovim emacs chezmoi qutebrowser qtile ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es mpv pass pass-otp pairus-icon-theme
+sudo pacman -S --noconfirm kitty vim neovim emacs chezmoi qutebrowser qtile ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es mpv pass pass-otp papirus-icon-theme imv
 
 # Install fonts
 sudo pacman -S --noconfirm ttf-ubuntu-font-family adobe-source-sans-fonts adobe-source-han-sans-jp-fonts ttf-nerd-fonts-symbols
