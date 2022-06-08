@@ -4,13 +4,23 @@ set -euo pipefail
 # Install basic utilities (qtile)
 read -n 1 -r -p "Install basic programs for qtile? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm polkit seahorse lxsession-gtk3 picom gnome-keyring slock network-manager-applet pipewire pipewire-alsa alsa-utils pipewire-pulse rofi
+[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm polkit seahorse \
+    lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
+    pipewire-alsa alsa-utils pipewire-pulse rofi dunst
+
+# Install x11 only utilities
+sudo pacman -S --noconfirm xorg slock xss-lock picom
 
 # Install basic programs
-sudo pacman -S --noconfirm kitty vim neovim emacs chezmoi qutebrowser qtile ripgrep fd shfmt wget bash-language-server shellcheck aspell aspell-en aspell-es mpv pass pass-otp papirus-icon-theme imv
+sudo pacman -S --noconfirm kitty vim neovim emacs chezmoi \
+    qutebrowser qtile ripgrep fd shfmt wget bash-language-server \
+    shellcheck aspell aspell-en aspell-es mpv pass \
+    pass-otp papirus-icon-theme imv
 
 # Install fonts
-sudo pacman -S --noconfirm ttf-ubuntu-font-family adobe-source-sans-fonts adobe-source-han-sans-jp-fonts ttf-nerd-fonts-symbols
+sudo pacman -S --noconfirm ttf-ubuntu-font-family \
+    adobe-source-sans-fonts adobe-source-han-sans-jp-fonts \
+    ttf-nerd-fonts-symbols
 
 # Install optional programs
 read -n 1 -r -p "Install optional programs? [y/N] "
@@ -23,8 +33,10 @@ if [[ $REPLY == [yY] ]]; then
         makepkg -si
     )
     printf "\n Paru (AUR helper) installed!"
-    sudo pacman -S --noconfirm lutris steam tldr wget zip unzip neofetch bleachbit virt-manager
-    paru -S brave-bin freetube discord-canary-electron-bin librewolf-bin proton-ge-custom-bin
+    sudo pacman -S --noconfirm lutris steam tldr wget zip \
+        unzip neofetch bleachbit virt-manager
+    paru -S brave-bin freetube discord-canary-electron-bin \
+        librewolf-bin proton-ge-custom-bin
 fi
 
 # Install go and some utilities
@@ -32,7 +44,8 @@ read -n 1 -r -p "Install go and utilities? [y/N] "
 echo
 if [[ $REPLY == [yY] ]]; then
     wget https://golang.org/dl/go1.17.1.linux-amd64.tar.gz -O /tmp/go.tar.gz
-    [[ -e "/tmp/go.tar.gz" ]] && rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
+    [[ -e "/tmp/go.tar.gz" ]] && rm -rf /usr/local/go &&
+        sudo tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
     /usr/local/go/bin/go version
     printf "\nGolang installed!"
 
