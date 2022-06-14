@@ -1,7 +1,9 @@
-;; Set PATH variable
-(setenv "PATH" (concat (getenv "PATH") ":/home/nick/.local/bin" ":/home/nick/go/bin" ":/usr/local/go/bin"))
-(setq exec-path (append exec-path '("/home/nick/.local/bin") '("/home/nick/go/bin") '("/usr/local/go/bin")))
-(setq shell-file-name "bash")
+;; Set exec-path for go and other stuff variable
+(setq exec-path (append exec-path (list
+                                   (concat (getenv "HOME") "/.local/bin")
+                                   (concat (getenv "HOME") "/go/bin")
+                                   "/usr/local/go/bin")))
+(setq shell-file-name "/bin/bash")
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -36,7 +38,7 @@
 ;; Remove format with lsp
 (setq +format-with-lsp nil)
 
-;; Remove lsp diasgnostics
+;; Remove lsp diagnostics
 (use-package! lsp-mode
   :ensure t
   :custom
@@ -56,10 +58,7 @@
 (setq gdscript-indent-offset 4)
 (setq gdscript-use-tab-indents t)
 (setq gdscript-godot-executable "/usr/bin/godot-mono")
-(defun gdscript-custom-settings ()
-  (setq tab-width 4))
-
-(add-hook 'gdscript-mode-hook 'gdscript-custom-settings)
+(setq-hook! 'gdscript-mode-hook tab-width 4)
 
 ;; Ignore errors related to the gdscript language server
 (defun lsp--gdscript-ignore-errors (original-function &rest args)
@@ -78,6 +77,11 @@
 
 ;; Delete trailing whitespace
 (add-hook! 'before-save-hook #'delete-trailing-whitespace)
+
+;; Global rainbow mode
+(define-globalized-minor-mode global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode 1)))
+(global-rainbow-mode 1 )
 
 ;; Disable comment continuation with the o/O keys
 ;; (setq +evil-want-o/O-to-continue-comments nil)
