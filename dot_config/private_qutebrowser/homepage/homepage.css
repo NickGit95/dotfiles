@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Anton');
-
 body {
     background-color: #282a36;
     margin: 0px;
@@ -18,8 +14,8 @@ body {
 }
 
 .page-title {
-    font-family: "Roboto Mono";
-    font-size: 3.0rem;
+    font-family: "Ubuntu Mono";
+    font-size: 4.0rem;
     font-weight: 600;
     color: #bd93f9;
     margin-bottom: .25em;
@@ -62,7 +58,7 @@ body {
     padding: 1em;
     background-color: #181920;
     border-radius: 3px;
-    font-family: "Roboto Mono";
+    font-family: "Ubuntu Mono";
     font-size: .85rem;
     width: 25%;
     height: 16em;
@@ -76,7 +72,7 @@ body {
 }
 
 .bookmark-title {
-    font-family: "Roboto";
+    font-family: "Ubuntu";
     font-size: 1.2rem;
     font-weight: 600;
     color: #ededed;
@@ -93,4 +89,3 @@ body {
 .bookmark:hover {
     color: #fff;
 }
-

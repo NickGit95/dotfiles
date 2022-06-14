@@ -10,6 +10,9 @@
 #   qute://help/configuring.html
 #   qute://help/settings.html
 #
+
+import os
+
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
@@ -572,7 +575,8 @@ c.url.searchengines = {
 }
 
 # Start page
-c.url.default_page = "file:///home/nick/.config/qutebrowser/homepage/homepage.html"
+HOME = os.path.expanduser("~")
+c.url.default_page = f"file:///{HOME}/.config/qutebrowser/homepage/homepage.html"
 c.url.start_pages = [c.url.default_page]
 
 # key binds
