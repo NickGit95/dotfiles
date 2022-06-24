@@ -59,7 +59,7 @@ body {
     background-color: #181920;
     border-radius: 3px;
     font-family: "Ubuntu Mono";
-    font-size: .85rem;
+    font-size: 1.2rem;
     width: 25%;
     height: 16em;
     margin: 0em .5em;
@@ -73,7 +73,7 @@ body {
 
 .bookmark-title {
     font-family: "Ubuntu";
-    font-size: 1.2rem;
+    font-size: 2.0rem;
     font-weight: 600;
     color: #ededed;
     margin: 0em 0em .35em 0em;
@@ -81,7 +81,7 @@ body {
 
 .bookmark {
     text-decoration: none;
-    color: #bd93f9;
+    color: #ffb86c;
     display:block;
     margin: .4em 0em;
 }

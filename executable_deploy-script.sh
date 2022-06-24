@@ -6,7 +6,7 @@ read -n 1 -r -p "Install basic programs for qtile? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm polkit seahorse \
     lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
-    pipewire-alsa alsa-utils pipewire-pulse rofi dunst
+    pipewire-alsa alsa-utils pipewire-pulse rofi dunst thunar pavucontrol-qt
 
 # Install x11 only utilities
 sudo pacman -S --noconfirm xorg slock xss-lock picom

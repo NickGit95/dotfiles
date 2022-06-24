@@ -39,10 +39,7 @@
 (setq +format-with-lsp nil)
 
 ;; Remove lsp diagnostics
-(use-package! lsp-mode
-  :ensure t
-  :custom
-  (lsp-diagnostics-provider :none))
+(setq lsp-diagnostic-provider :none)
 
 ;; Global auto revert
 (global-auto-revert-mode 1)
@@ -58,7 +55,9 @@
 (setq gdscript-indent-offset 4)
 (setq gdscript-use-tab-indents t)
 (setq gdscript-godot-executable "/usr/bin/godot-mono")
-(setq-hook! 'gdscript-mode-hook tab-width 4)
+(add-hook! 'gdscript-mode-hook #'lsp-diagnostics-flycheck-enable)
+(setq-hook! 'gdscript-mode-hook
+  tab-width 4)
 
 ;; Ignore errors related to the gdscript language server
 (defun lsp--gdscript-ignore-errors (original-function &rest args)
