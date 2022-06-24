@@ -17,4 +17,16 @@ These dotfiles include configuration for:
 - [[https://gnome-terminator.org/][Terminator]] terminal emulator.
 - [[https://qutebrowser.org/][Qutebrowser]] and vimium.
 - [[https://sw.kovidgoyal.net/kitty/][Kitty]] terminal emulator.
--
+
+* Instalation
+
+One command deploy without installing chezmoi (requires curl to be installed).
+#+begin_src shell
+sh -c "$(curl -fsLS chezmoi.io/get)" -- init --one-shot NickGit95
+#+end_src
+
+If chezmoi is already installed
+#+begin_src shell
+chezmoi init https://github.com/NickGit95/dotfiles.git
+chezmoi apply
+#+end_src

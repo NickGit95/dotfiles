@@ -1,29 +1,35 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Install basic programs
+read -n 1 -r -p "Install basic programs? [y/N] "
+echo
+[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm kitty vim neovim \
+    emacs qutebrowser ripgrep fd shfmt wget bash-language-server \
+    shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
+    papirus-icon-theme imv
+
 # Install basic utilities (qtile)
 read -n 1 -r -p "Install basic programs for qtile? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm polkit seahorse \
+[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm qtile polkit seahorse \
     lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
     pipewire-alsa alsa-utils pipewire-pulse rofi dunst thunar pavucontrol-qt
 
 # Install x11 only utilities
-sudo pacman -S --noconfirm xorg slock xss-lock picom
-
-# Install basic programs
-sudo pacman -S --noconfirm kitty vim neovim emacs chezmoi \
-    qutebrowser qtile ripgrep fd shfmt wget bash-language-server \
-    shellcheck aspell aspell-en aspell-es mpv pass \
-    pass-otp papirus-icon-theme imv
+read -n 1 -r -p "Install X11 programs? [y/N] "
+echo
+[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm xorg slock xss-lock picom
 
 # Install fonts
-sudo pacman -S --noconfirm ttf-ubuntu-font-family \
+read -n 1 -r -p "Install fonts? [y/N] "
+echo
+[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm ttf-ubuntu-font-family \
     adobe-source-sans-fonts adobe-source-han-sans-jp-fonts \
     ttf-nerd-fonts-symbols
 
 # Install optional programs
-read -n 1 -r -p "Install optional programs? [y/N] "
+read -n 1 -r -p "Install optional programs (AUR stuff)? [y/N] "
 echo
 if [[ $REPLY == [yY] ]]; then
     (
@@ -68,14 +74,6 @@ if [[ $REPLY == [yY] ]]; then
     sudo python -m pip install pytest
     sudo python -m pip install pipenv
     printf "\nPython utilities installed!"
-fi
-
-# Install some dotfiles
-read -n 1 -r -p "Configure dotfiles? [y/N]"
-echo
-if [[ $REPLY == [yY] ]]; then
-    chezmoi init https://github.com/NickGit95/dotfiles.git
-    chezmoi apply
 fi
 
 # Install doom emacs
