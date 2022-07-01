@@ -15,6 +15,7 @@ import os
 
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
+HOME = os.path.expanduser("~")
 
 # Colors thanks to Dracula theme
 palette = {
@@ -203,7 +204,7 @@ c.completion.cmd_history_max_items = 10
 # Directory to save downloads to. If unset, a sensible OS-specific
 # default is used.
 # Type: Directory
-c.downloads.location.directory = "/home/nick/Downloads"
+c.downloads.location.directory = HOME + "/Downloads"
 
 
 ## Background color of the completion widget category headers.
@@ -575,7 +576,6 @@ c.url.searchengines = {
 }
 
 # Start page
-HOME = os.path.expanduser("~")
 c.url.default_page = f"file:///{HOME}/.config/qutebrowser/homepage/homepage.html"
 c.url.start_pages = [c.url.default_page]
 

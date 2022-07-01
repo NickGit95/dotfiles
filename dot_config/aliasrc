@@ -22,7 +22,7 @@ alias \
     hdel="paru -Rns" \
     dota="chezmoi -v add" \
     dotcd="chezmoi cd" \
-    dote="chezmoi -v edit" \
+    dote="chezmoi -v edit --apply" \
     dotd="chezmoi -v diff" \
     dotap="chezmoi -v apply" \
     pc="pass -c" \

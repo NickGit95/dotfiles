@@ -7,14 +7,15 @@ echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm kitty vim neovim \
     emacs qutebrowser ripgrep fd shfmt wget bash-language-server \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
-    papirus-icon-theme imv
+    papirus-icon-theme imv sddm
 
 # Install basic utilities (qtile)
 read -n 1 -r -p "Install basic programs for qtile? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm qtile polkit seahorse \
     lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
-    pipewire-alsa alsa-utils pipewire-pulse rofi dunst thunar pavucontrol-qt
+    pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm pavucontrol \
+    scrot
 
 # Install x11 only utilities
 read -n 1 -r -p "Install X11 programs? [y/N] "

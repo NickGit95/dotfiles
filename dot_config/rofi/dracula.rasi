@@ -1,0 +1,171 @@
+* {
+    background:                  #282a36;
+    cyan:                        #8be9fd;
+    foreground:                  #f8f8f2;
+    current-line:                #44475a;
+    green:                       #50fa7b;
+    lightbg:                     #282a36;
+    selection:                   #44475a;
+    pink:                        #ff79c6;
+    purple:                      #bd93f9;
+    red:                         #ff5555;
+    transparent:                 rgba(0,0,0,0);
+    active-background:           @background;
+    active-foreground:           @cyan;
+    alternate-active-background: @lightbg;
+    alternate-active-foreground: @cyan;
+    alternate-normal-background: @lightbg;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    background-color:            transparent;
+    border-color:                @purple;
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    selected-active-background:  @cyan;
+    selected-active-foreground:  @foreground;
+    selected-normal-background:  @selection;
+    selected-normal-foreground:  @green;
+    selected-urgent-background:  @red;
+    selected-urgent-foreground:  @background;
+    separatorcolor:              @purple;
+    spacing:                     1;
+    urgent-background:           @background;
+    urgent-foreground:           @red;
+}
+element {
+    border-radius: 4px;
+    padding: 1px ;
+    cursor:  pointer;
+    spacing: 5px ;
+    border:  0;
+    position: center;
+}
+element normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element selected.normal {
+    background-color: @current-line;
+    text-color:       @selected-normal-foreground;
+}
+element selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+element-text {
+    background-color: transparent;
+    cursor:           inherit;
+    highlight:        inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: transparent;
+    size:             inherit;
+    cursor:           inherit;
+    text-color:       inherit;
+}
+window {
+    transparency:     "screenshot";
+    padding:          15;
+    background-color: @background;
+    color:            @background;
+    border:           1;
+    border-radius:    12px;
+    width:            25%;
+    anchor:           center;
+}
+mainbox {
+    padding: 0;
+    border-radius:    12px;
+    border:  0;
+}
+message {
+    padding:      1px ;
+    border-color: @separatorcolor;
+    border:       2px dash 0px 0px ;
+}
+textbox {
+    text-color: @foreground;
+}
+listview {
+    padding:      5px;
+    scrollbar:    true;
+    spacing:      2px ;
+    dynamic:      true;
+}
+scrollbar {
+    width:        4px ;
+    padding:      0;
+    handle-width: 8px ;
+    border:       0;
+    handle-color: @normal-foreground;
+    border-radius: 12px;
+}
+sidebar {
+    border-color: @separatorcolor;
+    border:       2px dash 0px 0px ;
+}
+button {
+    cursor:     pointer;
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+button selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+num-filtered-rows {
+    expand:     false;
+    text-color: @pink;
+}
+inputbar {
+    padding:    5px ;
+    spacing:    0px ;
+    text-color: @normal-foreground;
+    children:   ["entry","num-filtered-rows"];
+}
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+entry {
+    text-color:        @normal-foreground;
+    cursor:            text;
+    spacing:           0;
+    placeholder-color: @cyan;
+}
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+textbox-prompt-colon {
+    margin:     0px;
+    expand:     false;
+    str:        ":  ";
+    text-color: inherit;
+}

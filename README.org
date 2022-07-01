@@ -20,6 +20,8 @@ These dotfiles include configuration for:
 
 * Instalation
 
+After the dotfiles are deployed, the deployment script will kick in (only compatible with Arch Linux)
+
 One command deploy without installing chezmoi (requires curl to be installed).
 #+begin_src shell
 sh -c "$(curl -fsLS chezmoi.io/get)" -- init --one-shot NickGit95
@@ -27,6 +29,5 @@ sh -c "$(curl -fsLS chezmoi.io/get)" -- init --one-shot NickGit95
 
 If chezmoi is already installed
 #+begin_src shell
-chezmoi init https://github.com/NickGit95/dotfiles.git
-chezmoi apply
+chezmoi init --apply https://github.com/NickGit95/dotfiles.git
 #+end_src
