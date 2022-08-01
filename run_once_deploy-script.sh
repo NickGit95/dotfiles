@@ -7,7 +7,7 @@ echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm kitty vim neovim \
     emacs qutebrowser ripgrep fd shfmt wget bash-language-server \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
-    papirus-icon-theme imv sddm
+    papirus-icon-theme imv sddm xdg-utils
 
 # Install basic utilities (qtile)
 read -n 1 -r -p "Install basic programs for qtile? [y/N] "
@@ -41,7 +41,7 @@ if [[ $REPLY == [yY] ]]; then
     )
     printf "\n Paru (AUR helper) installed!"
     sudo pacman -S --noconfirm lutris steam tldr wget zip \
-        unzip neofetch bleachbit virt-manager
+        unzip neofetch bleachbit virt-manager syncthing
     paru -S brave-bin freetube discord-canary-electron-bin \
         librewolf-bin proton-ge-custom-bin
 fi
