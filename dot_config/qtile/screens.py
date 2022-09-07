@@ -146,7 +146,7 @@ def init_screens():
         Screen(
             top=bar.Bar(
                 init_widgets(),
-                23,
+                20,
                 border_color=variables.COLORS["background"],
                 border_width=4,
             ),
