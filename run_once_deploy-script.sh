@@ -2,12 +2,13 @@
 set -euo pipefail
 
 # Install basic programs
+echo "Remember to enable multilib repositories"
 read -n 1 -r -p "Install basic programs? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm kitty vim neovim \
     emacs qutebrowser ripgrep fd shfmt wget bash-language-server \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
-    papirus-icon-theme imv sddm xdg-utils
+    papirus-icon-theme imv sddm xdg-utils git
 
 # Install basic utilities (qtile)
 read -n 1 -r -p "Install basic programs for qtile? [y/N] "
@@ -20,7 +21,7 @@ echo
 # Install x11 only utilities
 read -n 1 -r -p "Install X11 programs? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm xorg slock xss-lock picom
+[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm xorg slock xss-lock picom xclip
 
 # Install fonts
 read -n 1 -r -p "Install fonts? [y/N] "
@@ -41,8 +42,8 @@ if [[ $REPLY == [yY] ]]; then
     )
     printf "\n Paru (AUR helper) installed!"
     sudo pacman -S --noconfirm lutris steam tldr wget zip \
-        unzip neofetch bleachbit virt-manager syncthing
-    paru -S brave-bin freetube discord-canary-electron-bin \
+        unzip neofetch bleachbit virt-manager syncthing thunderbird
+    paru -S brave-bin freetube tutanota-desktop-bin \
         librewolf-bin proton-ge-custom-bin
 fi
 
@@ -75,6 +76,7 @@ if [[ $REPLY == [yY] ]]; then
     sudo python -m pip install pytest
     sudo python -m pip install pipenv
     printf "\nPython utilities installed!"
+    echo
 fi
 
 # Install doom emacs
