@@ -10,8 +10,16 @@ echo
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
     papirus-icon-theme imv sddm xdg-utils git
 
-# Install basic utilities (qtile)
-read -n 1 -r -p "Install basic programs for qtile? [y/N] "
+# Install KDE plasma and utilities
+read -n 1 -r -p "Install KDE plasma and basic utils? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S plasma sddm dolphin
+    sudo systemctl enable sddm
+fi
+
+# Install basic utilities for qtile
+read -n 1 -r -p "Install basic utilities for qtile? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm qtile polkit seahorse \
     lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
@@ -28,7 +36,7 @@ read -n 1 -r -p "Install fonts? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm ttf-ubuntu-font-family \
     adobe-source-sans-fonts adobe-source-han-sans-jp-fonts \
-    ttf-nerd-fonts-symbols-2048-em
+    ttf-nerd-fonts-symbols-2048-em noto-fonts-emoji
 
 # Install optional programs
 read -n 1 -r -p "Install optional programs (AUR stuff)? [y/N] "
@@ -43,6 +51,8 @@ if [[ $REPLY == [yY] ]]; then
     printf "\n Paru (AUR helper) installed!"
     sudo pacman -S --noconfirm lutris steam tldr wget zip \
         unzip neofetch bleachbit virt-manager syncthing thunderbird
+    sudo systemctl enable syncthing
+    sudo systemctl start syncthing
     paru -S brave-bin freetube tutanota-desktop-bin \
         librewolf-bin proton-ge-custom-bin
 fi
