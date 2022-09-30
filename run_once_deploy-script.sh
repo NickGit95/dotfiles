@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Install basic programs
-echo "Remember to enable multilib repositories"
+echo "Remember to enable multilib repositories and set up NetworkManager"
 read -n 1 -r -p "Install basic programs? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm kitty vim neovim \
@@ -16,6 +16,13 @@ echo
 if [[ $REPLY == [yY] ]]; then
     sudo pacman -S plasma sddm dolphin
     sudo systemctl enable sddm
+fi
+
+# Install KDE plasma and utilities
+read -n 1 -r -p "Install nvidia utils? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S nvidia nvidia-utils nvidia-settings
 fi
 
 # Install basic utilities for qtile
