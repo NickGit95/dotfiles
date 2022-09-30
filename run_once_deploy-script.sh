@@ -28,7 +28,7 @@ fi
 # Install basic utilities for qtile
 read -n 1 -r -p "Install basic utilities for qtile? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm qtile polkit seahorse \
+[[ $REPLY == [yY] ]] && sudo pacman -S qtile polkit seahorse \
     lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
     pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm pavucontrol \
     scrot
@@ -49,18 +49,21 @@ echo
 read -n 1 -r -p "Install optional programs (AUR stuff)? [y/N] "
 echo
 if [[ $REPLY == [yY] ]]; then
-    (
-        cd /tmp
-        git clone https://aur.archlinux.org/paru.git
-        cd paru
-        makepkg -si
-    )
-    printf "\n Paru (AUR helper) installed!"
+
+    read -n 1 -r -p "Install AUR helper paru? [y/N]"
+    echo
+    if [[ $REPLY == [yY] ]]; then
+	(
+	    cd /tmp
+	    git clone https://aur.archlinux.org/paru.git
+	    cd paru
+	    makepkg -si
+	)
+	printf "\n Paru (AUR helper) installed!"
+    fi
     sudo pacman -S --noconfirm lutris steam tldr wget zip \
         unzip neofetch bleachbit virt-manager syncthing thunderbird
-    sudo systemctl enable syncthing
-    sudo systemctl start syncthing
-    paru -S brave-bin freetube tutanota-desktop-bin \
+    paru -S brave-bin freetube-bin tutanota-desktop-bin \
         librewolf-bin proton-ge-custom-bin
 fi
 
