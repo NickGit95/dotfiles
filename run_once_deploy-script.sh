@@ -5,7 +5,7 @@ set -euo pipefail
 echo "Remember to enable multilib repositories and set up NetworkManager"
 read -n 1 -r -p "Install basic programs? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm kitty vim neovim \
+[[ $REPLY == [yY] ]] && sudo pacman -S --needed --noconfirm kitty vim neovim \
     emacs qutebrowser ripgrep fd shfmt wget bash-language-server \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
     papirus-icon-theme imv sddm xdg-utils git
@@ -14,7 +14,7 @@ echo
 read -n 1 -r -p "Install KDE plasma and basic utils? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
-    sudo pacman -S plasma sddm dolphin
+    sudo pacman -S --needed plasma sddm dolphin
     sudo systemctl enable sddm
 fi
 
@@ -28,15 +28,18 @@ fi
 # Install basic utilities for qtile
 read -n 1 -r -p "Install basic utilities for qtile? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -S qtile polkit seahorse \
-    lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
-    pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm pavucontrol \
-    scrot
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S --needed qtile polkit seahorse \
+        lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
+        pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm pavucontrol \
+        scrot
+    python -m pip install psutil
+fi
 
 # Install x11 only utilities
 read -n 1 -r -p "Install X11 programs? [y/N] "
 echo
-[[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm xorg slock xss-lock picom xclip
+[[ $REPLY == [yY] ]] && sudo pacman -S --needed --noconfirm xorg slock xss-lock picom xclip
 
 # Install fonts
 read -n 1 -r -p "Install fonts? [y/N] "
@@ -53,13 +56,13 @@ if [[ $REPLY == [yY] ]]; then
     read -n 1 -r -p "Install AUR helper paru? [y/N]"
     echo
     if [[ $REPLY == [yY] ]]; then
-	(
-	    cd /tmp
-	    git clone https://aur.archlinux.org/paru.git
-	    cd paru
-	    makepkg -si
-	)
-	printf "\n Paru (AUR helper) installed!"
+        (
+            cd /tmp
+            git clone https://aur.archlinux.org/paru.git
+            cd paru
+            makepkg -si
+        )
+        printf "\n Paru (AUR helper) installed!"
     fi
     sudo pacman -S --noconfirm lutris steam tldr wget zip \
         unzip neofetch bleachbit virt-manager syncthing thunderbird
