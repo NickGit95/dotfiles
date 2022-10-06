@@ -8,7 +8,7 @@ echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --needed --noconfirm kitty vim neovim \
     emacs qutebrowser ripgrep fd shfmt wget bash-language-server \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
-    papirus-icon-theme imv sddm xdg-utils git
+    papirus-icon-theme imv sddm xdg-utils git cmake
 
 # Install KDE plasma and utilities
 read -n 1 -r -p "Install KDE plasma and basic utils? [y/N]"
@@ -32,7 +32,7 @@ if [[ $REPLY == [yY] ]]; then
     sudo pacman -S --needed qtile polkit seahorse \
         lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
         pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm pavucontrol \
-        scrot
+        scrot python-pip
     python -m pip install psutil
 fi
 
@@ -58,14 +58,15 @@ if [[ $REPLY == [yY] ]]; then
     if [[ $REPLY == [yY] ]]; then
         (
             cd /tmp
-            git clone https://aur.archlinux.org/paru.git
-            cd paru
+            git clone https://aur.archlinux.org/paru-bin.git
+            cd paru-bin
             makepkg -si
         )
         printf "\n Paru (AUR helper) installed!"
     fi
     sudo pacman -S --noconfirm lutris steam tldr wget zip \
-        unzip neofetch bleachbit virt-manager syncthing thunderbird
+        unzip neofetch bleachbit virt-manager syncthing thunderbird qemu-full \
+        dnsmasq
     paru -S brave-bin freetube-bin tutanota-desktop-bin \
         librewolf-bin proton-ge-custom-bin
 fi
@@ -94,7 +95,7 @@ fi
 read -n 1 -r -p "Install python utilities? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
-    sudo pacman -S --noconfirm python-black pyright python-pip
+    sudo pacman -S --needed --noconfirm python-black pyright python-pip
     sudo python -m pip install pylint
     sudo python -m pip install pytest
     sudo python -m pip install pipenv
