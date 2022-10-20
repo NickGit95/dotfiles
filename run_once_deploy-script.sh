@@ -14,7 +14,7 @@ echo
 read -n 1 -r -p "Install KDE plasma and basic utils? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
-    sudo pacman -S --needed plasma sddm dolphin
+    sudo pacman -S --needed plasma sddm dolphin plasma-wayland-session plasma-wayland-protocols
     sudo systemctl enable sddm
 fi
 
@@ -31,7 +31,7 @@ echo
 if [[ $REPLY == [yY] ]]; then
     sudo pacman -S --needed qtile polkit seahorse \
         lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
-        pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm pavucontrol \
+        pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm-qt pavucontrol \
         scrot python-pip
     python -m pip install psutil
 fi
@@ -68,7 +68,7 @@ if [[ $REPLY == [yY] ]]; then
         unzip neofetch bleachbit virt-manager syncthing thunderbird qemu-full \
         dnsmasq
     paru -S brave-bin freetube-bin tutanota-desktop-bin \
-        librewolf-bin proton-ge-custom-bin
+        librewolf-bin proton-ge-custom-bin bottles
 fi
 
 # Install go and some utilities
