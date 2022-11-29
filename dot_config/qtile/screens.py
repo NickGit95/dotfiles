@@ -56,8 +56,8 @@ def init_widgets():
             padding=20,
         ),
         widget.TextBox(
-            foreground=variables.COLORS["background"],
-            background=variables.COLORS["orange"],
+            foreground=variables.COLORS["orange"],
+            background=variables.COLORS["background"],
             fontsize=20,
             padding=5,
             text="",
@@ -71,8 +71,8 @@ def init_widgets():
             padding=20,
         ),
         widget.TextBox(
-            foreground=variables.COLORS["background"],
-            background=variables.COLORS["red"],
+            foreground=variables.COLORS["red"],
+            background=variables.COLORS["background"],
             fontsize=20,
             padding=5,
             text="",
@@ -85,8 +85,8 @@ def init_widgets():
             padding=20,
         ),
         widget.TextBox(
-            foreground=variables.COLORS["background"],
-            background=variables.COLORS["green"],
+            foreground=variables.COLORS["green"],
+            background=variables.COLORS["background"],
             fontsize=20,
             padding=5,
             text="",
@@ -101,8 +101,8 @@ def init_widgets():
             padding=20,
         ),
         widget.TextBox(
-            foreground=variables.COLORS["background"],
-            background=variables.COLORS["yellow"],
+            foreground=variables.COLORS["yellow"],
+            background=variables.COLORS["background"],
             fontsize=20,
             padding=5,
             text="",
