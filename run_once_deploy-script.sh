@@ -10,15 +10,31 @@ echo
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
     papirus-icon-theme imv sddm xdg-utils git cmake
 
+# Install wayland utilities
+read -n 1 -r -p "Install wayland utilities? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S --needed qt5-wayland qt6-wayland xdg-desktop-portal
+fi
+#
+# Install amd utilities
+read -n 1 -r -p "Install amd-gpu utilities? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S --needed mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon \
+        libva-mesa-driver mesa-vdpau
+fi
+
 # Install KDE plasma and utilities
 read -n 1 -r -p "Install KDE plasma and basic utils? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
-    sudo pacman -S --needed plasma sddm dolphin plasma-wayland-session plasma-wayland-protocols
+    sudo pacman -S --needed plasma sddm dolphin plasma-wayland-session plasma-wayland-protocols \
+        xdg-destop-portal-kde
     sudo systemctl enable sddm
 fi
 
-# Install KDE plasma and utilities
+# Install nvidia and utilities
 read -n 1 -r -p "Install nvidia utils? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
