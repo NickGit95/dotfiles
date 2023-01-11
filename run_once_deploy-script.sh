@@ -6,7 +6,8 @@ echo "Remember to enable multilib repositories and set up NetworkManager"
 read -n 1 -r -p "Install basic programs? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --needed --noconfirm kitty vim neovim \
-    emacs qutebrowser ripgrep fd shfmt wget bash-language-server \
+    emacs qutebrowser ripgrep fd shfmt wget bash-language-server yamllint ansible \
+    ansible-lint yaml-language-server \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
     papirus-icon-theme imv sddm xdg-utils git cmake
 
