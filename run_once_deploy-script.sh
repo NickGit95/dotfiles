@@ -15,7 +15,7 @@ echo
 read -n 1 -r -p "Install wayland utilities? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
-    sudo pacman -S --needed qt5-wayland qt6-wayland xdg-desktop-portal
+    sudo pacman -S --needed qt5-wayland qt6-wayland xdg-desktop-portal wl-clipboard
 fi
 #
 # Install amd utilities
@@ -31,7 +31,7 @@ read -n 1 -r -p "Install KDE plasma and basic utils? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
     sudo pacman -S --needed plasma sddm dolphin plasma-wayland-session plasma-wayland-protocols \
-        xdg-destop-portal-kde
+        xdg-desktop-portal-kde
     sudo systemctl enable sddm
 fi
 
