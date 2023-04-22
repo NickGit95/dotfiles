@@ -15,6 +15,7 @@ alias \
     duhere="sudo du -achd 1" \
     cl="clear" \
     clearh="clear && history -c && history -w" \
+    clipc="wl-copy a" \
     cp="cp -iv" \
     mv="mv -iv" \
     mkd="mkdir -pv" \

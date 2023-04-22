@@ -51,7 +51,7 @@ export ALTERNATE_EDITOR=""
 export EDITOR="nvim"
 export VISUAL="emacsclient -c -a emacs"
 export NO_AT_BRIDGE=1
-export PASSWORD_STORE_CLIP_TIME=15
+export PASSWORD_STORE_CLIP_TIME=25
 
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
