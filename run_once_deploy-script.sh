@@ -63,7 +63,7 @@ read -n 1 -r -p "Install fonts? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm ttf-ubuntu-font-family \
     adobe-source-sans-fonts adobe-source-han-sans-jp-fonts \
-    ttf-nerd-fonts-symbols-2048-em noto-fonts-emoji
+    ttf-nerd-fonts-symbols noto-fonts-emoji
 
 # Install optional programs
 read -n 1 -r -p "Install optional programs (AUR stuff)? [y/N] "
