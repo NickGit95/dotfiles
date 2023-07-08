@@ -45,6 +45,7 @@ shopt -s expand_aliases
 shopt -s checkwinsize
 
 # EXPORT variables
+export GLFW_IM_MODULE=ibus
 export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
 export ALTERNATE_EDITOR=""

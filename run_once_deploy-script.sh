@@ -9,7 +9,7 @@ echo
     emacs qutebrowser ripgrep fd shfmt wget bash-language-server yamllint ansible \
     ansible-lint yaml-language-server \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
-    papirus-icon-theme imv sddm xdg-utils git cmake
+    papirus-icon-theme imv sddm xdg-utils git cmake gnome-keyring
 
 # Install wayland utilities
 read -n 1 -r -p "Install wayland utilities? [y/N]"
@@ -35,6 +35,17 @@ if [[ $REPLY == [yY] ]]; then
     sudo systemctl enable sddm
 fi
 
+# Install flatpak apps/runtimes
+read -n 1 -r -p "Install flatpak apps? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S --needed --noconfirm flatpak
+    flatpak install com.discordapp.Discord com.usebottles.bottles \
+	com.valvesoftware.Steam de.shorsh.discord-screenaudio \
+	org.freedesktop.Platform.VulkanLayer.MangoHud \
+	com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+fi
+
 # Install nvidia and utilities
 read -n 1 -r -p "Install nvidia utils? [y/N]"
 echo
@@ -42,13 +53,20 @@ if [[ $REPLY == [yY] ]]; then
     sudo pacman -S nvidia nvidia-utils nvidia-settings
 fi
 
+# Install basic utilities for pipewire sound
+read -n 1 -r -p "Install basic utilities for pipewire? [y/N] "
+echo
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S --needed pipewire pipewire-alsa alsa-utils pipewire-pulse pavucontrol
+fi
+
 # Install basic utilities for qtile
 read -n 1 -r -p "Install basic utilities for qtile? [y/N] "
 echo
 if [[ $REPLY == [yY] ]]; then
     sudo pacman -S --needed qtile polkit seahorse \
-        lxsession-gtk3 gnome-keyring network-manager-applet pipewire \
-        pipewire-alsa alsa-utils pipewire-pulse rofi dunst pcmanfm-qt pavucontrol \
+        lxsession-gtk3 gnome-keyring network-manager-applet \
+        alsa-utils rofi dunst pcmanfm-qt pavucontrol \
         scrot python-pip
     python -m pip install psutil
 fi
@@ -81,11 +99,11 @@ if [[ $REPLY == [yY] ]]; then
         )
         printf "\n Paru (AUR helper) installed!"
     fi
-    sudo pacman -S --noconfirm lutris steam tldr wget zip \
+    sudo pacman -S --noconfirm tldr wget zip \
         unzip neofetch bleachbit virt-manager syncthing thunderbird qemu-full \
-        dnsmasq
-    paru -S brave-bin freetube-bin tutanota-desktop-bin \
-        librewolf-bin proton-ge-custom-bin bottles
+        dnsmasq mangohud
+    paru -S brave-bin freetube-git tutanota-desktop-bin \
+        librewolf-bin kwin-bismuth
 fi
 
 # Install go and some utilities
