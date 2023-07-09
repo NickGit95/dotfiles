@@ -1,0 +1,2 @@
+[Context]
+filesystems=xdg-config/MangoHud:ro;xdg-data/applications;home:ro
