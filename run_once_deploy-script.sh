@@ -42,8 +42,7 @@ if [[ $REPLY == [yY] ]]; then
     sudo pacman -S --needed --noconfirm flatpak
     flatpak install com.discordapp.Discord com.usebottles.bottles \
 	com.valvesoftware.Steam de.shorsh.discord-screenaudio \
-	org.freedesktop.Platform.VulkanLayer.MangoHud \
-	com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+	org.freedesktop.Platform.VulkanLayer.MangoHud
 fi
 
 # Install nvidia and utilities
