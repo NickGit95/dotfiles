@@ -1,5 +1,5 @@
 [Added Associations]
-application/pdf=brave-browser.desktop;libreoffice-draw.desktop;brave-browser-wl.desktop;librewolf.desktop;krita_pdf.desktop;
+application/pdf=brave-browser.desktop;libreoffice-draw.desktop;librewolf.desktop;krita_pdf.desktop;
 application/x-matroska=mpv.desktop;
 audio/aac=mpv.desktop;
 audio/mp4=mpv.desktop;
