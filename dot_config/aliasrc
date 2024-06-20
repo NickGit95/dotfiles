@@ -8,8 +8,10 @@
 ##########################################
 
 alias \
+    adb='HOME="$XDG_DATA_HOME"/android adb' \
     myip="curl ipinfo.io/ip" \
     vi="vim" \
+    n="nvim" \
     untar="tar -zxvf" \
     sha="shasum -a 256" \
     duhere="sudo du -achd 1" \

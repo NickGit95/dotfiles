@@ -11,6 +11,7 @@ These dotfiles include configuration for:
 - KDE keyboard shortcuts.
 - Krita configuration and shortcuts.
 - VIM and Neovim.
+- Hyprland ecosystem.
 - [[http://www.qtile.org/][Qtile]] window manager.
 - [[https://github.com/hlissner/doom-emacs][Doom]] emacs.
 - [[https://github.com/makeworld-the-better-one/amfora][Amfora]] gemini client.

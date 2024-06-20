@@ -1,0 +1,280 @@
+@import url("./colors.css");
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: {{ get .font "regular"}}, Helvetica, Arial, sans-serif;
+    font-size: {{ get .font "size"}}px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @foreground_white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+#workspaces button {
+    background: @background;
+    color: @foreground_white;
+    border-radius: 20px;
+
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: @cyan;
+    color: black;
+}
+
+#workspaces button.focused {
+    background: #073641;
+}
+
+#workspaces button.focused:hover {
+    background: @cyan;
+    color: black;
+}
+
+#workspaces button.visible {
+    background: @yellow;
+    color: black;
+}
+
+#workspaces button.active {
+    background: @green;
+    color: black;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+#mode {
+    background-color: @cyan;
+    border-bottom: 3px solid @foreground_white;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#custom-launcher,
+#custom-power,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    color: black;
+}
+
+#window,
+#workspaces {
+    margin: 0px 5px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+#clock {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+#battery {
+    background-color: @foreground_white;
+    color: #073641;
+}
+
+#battery.charging, #battery.plugged {
+    color: @foreground_white;
+    background-color: @green;
+}
+
+@keyframes blink {
+    to {
+        background-color: @foreground_white;
+        color: #073641;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @foreground_white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #073641;
+}
+
+#cpu {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#memory {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#disk {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#backlight {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+
+}
+
+#network {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#network.disconnected {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: red;
+}
+
+#pulseaudio {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#pulseaudio.muted {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: red;
+}
+
+#custom-media {
+    background-color: @cyan;
+    background-image: linear-gradient(62deg, @cyan 0%, #6C71C3 100%);
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+#custom-power{
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @pink 0%, @cyan 52%, @cyan 90%);
+    font-size: 16px;
+    border-radius: 19px;
+
+}
+#custom-launcher{
+    background-color: @pink;
+    background-image: linear-gradient(-45deg, @pink 0%, @cyan 52%, @cyan 90%);
+    font-size: 18px;
+    border-radius: 20px;
+
+}
+
+#custom-updater {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+
+#temperature {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: @pink;
+    background-image: linear-gradient(-45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    background-color: @pink;
+    background-image: linear-gradient(-45deg, @pink 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @pink;
+    background-image: linear-gradient(-45deg, @pink 0%, @cyan 52%, @cyan 90%);
+    color: black;
+}
+
+#idle_inhibitor {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+#idle_inhibitor.activated {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @pink 0%, @cyan 52%, @cyan 90%);
+    color: black;
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+#language {
+    background-color: @pink;
+    background-image: linear-gradient(45deg, @cyan 0%, @cyan 52%, @cyan 90%);
+    color: black;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: @green;
+    color: #000000;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0px 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}

@@ -1,28 +1,28 @@
 -- General settings
-local options = {
-  backup = false,
-  hidden = true,
-  incsearch = true,
-  laststatus = 2,
-  number = true,
-  relativenumber = true,
-  shiftwidth = 4,
-  smartindent = true,
-  swapfile = false,
-  termguicolors = true,
-}
-local set = vim.opt
-for k, v in pairs(options) do
-  set[k] = v
-end
+vim.opt.formatoptions:remove({ "c", "r", "o" })
+local o = vim.o
 
-local lightlineopt = { colorscheme = "dracula", }
-vim.api.nvim_set_var("lightline", lightlineopt)
+o.backup = false
+o.cursorline = true
+o.cursorlineopt = "number"
+o.expandtab = true
+o.hidden = true
+o.incsearch = true
+o.laststatus = 2
+o.number = true
+o.numberwidth = 4
+o.ruler = false
+o.shiftwidth = 4
+o.showmode = false
+o.smartindent = true
+o.softtabstop = 4
+o.swapfile = false
+o.tabstop = 4
+o.termguicolors = true
 
-vim.cmd [[
-  syntax enable
-  imap jj <Esc>
-  set iskeyword+=-
-  colorscheme dracula
-  autocmd BufWritePre * :%s/\s\+$//e
-]]
+vim.cmd([[
+    colorscheme eldritch
+    syntax on
+    imap jj <Esc>
+    set iskeyword+=-
+]])

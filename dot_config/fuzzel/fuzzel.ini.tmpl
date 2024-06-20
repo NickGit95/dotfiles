@@ -1,0 +1,22 @@
+{{- $colors := get .colors .theme }}
+dpi-aware=yes
+icon-theme=Papirus
+width=20
+font={{- get .font "regular"}}:weight=bold:size={{- get .font "size"}}
+#line-height=25
+fields=name,generic,comment,categories,filename,keywords
+terminal=kitty
+prompt="❯   "
+layer=overlay
+[colors]
+background={{- get $colors "background"}}fa
+selection={{- get $colors "cyan"}}fa
+text={{- get $colors "foreground_white"}}fa
+selection-text={{- get $colors "foreground"}}fa
+border={{- get $colors "cyan"}}fa
+
+[border]
+radius=20
+
+[dmenu]
+exit-immediately-if-empty=yes

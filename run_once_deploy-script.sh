@@ -7,7 +7,7 @@ read -n 1 -r -p "Install basic programs? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --needed --noconfirm kitty vim neovim \
     emacs qutebrowser ripgrep fd shfmt wget bash-language-server yamllint ansible \
-    ansible-lint yaml-language-server \
+    ansible-lint yaml-language-server stylua \
     shellcheck aspell aspell-en aspell-es mpv pass pass-otp \
     papirus-icon-theme imv sddm xdg-utils git cmake gnome-keyring
 
@@ -17,7 +17,15 @@ echo
 if [[ $REPLY == [yY] ]]; then
     sudo pacman -S --needed qt5-wayland qt6-wayland xdg-desktop-portal wl-clipboard
 fi
-#
+
+# Install hyprland utilities
+read -n 1 -r -p "Install hyprland utilities? [y/N]"
+echo
+if [[ $REPLY == [yY] ]]; then
+    sudo pacman -S --needed hyprland pamixer dunst wireplumber waybar fuzzel hypridle hyprlock \
+        xdg-desktop-portal-hyprland hyprpaper grim slurp qt6ct udiskie
+fi
+
 # Install amd utilities
 read -n 1 -r -p "Install amd-gpu utilities? [y/N]"
 echo
@@ -41,8 +49,8 @@ echo
 if [[ $REPLY == [yY] ]]; then
     sudo pacman -S --needed --noconfirm flatpak
     flatpak install com.discordapp.Discord com.usebottles.bottles \
-	com.valvesoftware.Steam de.shorsh.discord-screenaudio \
-	org.freedesktop.Platform.VulkanLayer.MangoHud
+        com.valvesoftware.Steam dev.vencord.Vesktop \
+        org.freedesktop.Platform.VulkanLayer.MangoHud
 fi
 
 # Install nvidia and utilities
@@ -80,10 +88,10 @@ read -n 1 -r -p "Install fonts? [y/N] "
 echo
 [[ $REPLY == [yY] ]] && sudo pacman -S --noconfirm ttf-ubuntu-font-family \
     adobe-source-sans-fonts adobe-source-han-sans-jp-fonts \
-    ttf-nerd-fonts-symbols noto-fonts-emoji
+    nerd-fonts noto-fonts-emoji ttf-roboto
 
 # Install optional programs
-read -n 1 -r -p "Install optional programs (AUR stuff)? [y/N] "
+read -n 1 -r -p "Install programs from the AUR? [y/N] "
 echo
 if [[ $REPLY == [yY] ]]; then
 
@@ -102,7 +110,10 @@ if [[ $REPLY == [yY] ]]; then
         unzip neofetch bleachbit virt-manager syncthing thunderbird qemu-full \
         dnsmasq mangohud
     paru -S brave-bin freetube-git tutanota-desktop-bin \
-        librewolf-bin kwin-bismuth
+        librewolf-bin kwin-polonium
+
+    # Hyprland packages
+    paru -S
 fi
 
 # Install go and some utilities
@@ -129,10 +140,7 @@ fi
 read -n 1 -r -p "Install python utilities? [y/N]"
 echo
 if [[ $REPLY == [yY] ]]; then
-    sudo pacman -S --needed --noconfirm python-black pyright python-pip
-    sudo python -m pip install pylint
-    sudo python -m pip install pytest
-    sudo python -m pip install pipenv
+    sudo pacman -S --needed --noconfirm python-black pyright python-pip python-pylint
     printf "\nPython utilities installed!"
     echo
 fi

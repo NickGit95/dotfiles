@@ -1,0 +1,20 @@
+theme: main
+terminal: kitty
+font:
+  size: 14
+  size_notifications: 12
+  size_qt: 12
+  mono: Ubuntu Mono
+  regular: Roboto
+
+colors:
+  "main":
+    "cyan": "68F2E0"
+    "green": "6CE05C"
+    "pink": "FF9BF5"
+    "purple": "C495F0"
+    "red": "F01578"
+    "yellow": "F3F79E"
+    "foreground": "4D4D4D"
+    "background": "4D4D4D"
+    "foreground_white": "FFFFFF"
