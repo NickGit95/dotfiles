@@ -110,10 +110,7 @@ if [[ $REPLY == [yY] ]]; then
         unzip neofetch bleachbit virt-manager syncthing thunderbird qemu-full \
         dnsmasq mangohud
     paru -S brave-bin freetube-git tutanota-desktop-bin \
-        librewolf-bin kwin-polonium
-
-    # Hyprland packages
-    paru -S
+        librewolf-bin
 fi
 
 # Install go and some utilities
