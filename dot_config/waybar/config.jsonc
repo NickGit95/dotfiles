@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "height": 35,
     "spacing": 5,
@@ -84,26 +84,27 @@
         "format": "{:%I:%M %p}  ",
         "format-alt": "{:%A, %d %B, %Y (%R)}  ",
         "tooltip-format": "\n<span size='11pt' font='Ubuntu Mono'>{calendar}</span>",
+        "timezone": "",
         "calendar": {
 	    "mode"          : "month",
 	    "mode-mon-col"  : 3,
 	    "weeks-pos"     : "right",
 	    "on-scroll"     : 1,
-	"format": {
-	    "months":     "<span color='#FFFFFF'><b>{}</b></span>",
-	    "days":       "<span color='#FFFFFF'><b>{}</b></span>",
-	    "weeks":      "<span color='#68F2E0'><b>W{}</b></span>",
-	    "weekdays":   "<span color='#F3F79E'><b>{}</b></span>",
-	    "today":      "<span color='#6CE05C'><b><u>{}</u></b></span>"
-	}
-	},
+            "format": {
+                "months":     "<span color='#FFFFFF'><b>{}</b></span>",
+                "days":       "<span color='#FFFFFF'><b>{}</b></span>",
+                "weeks":      "<span color='#68F2E0'><b>W{}</b></span>",
+                "weekdays":   "<span color='#F3F79E'><b>{}</b></span>",
+                "today":      "<span color='#6CE05C'><b><u>{}</u></b></span>"
+            }
+        },
         "actions":  {
-	    "on-click-right": "mode",
-	    "on-click-forward": "tz_up",
-	    "on-click-backward": "tz_down",
-	    "on-scroll-up": "shift_up",
-	    "on-scroll-down": "shift_down"
-	}
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
     "cpu": {
         "format": "{usage}% ",

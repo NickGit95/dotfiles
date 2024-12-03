@@ -17,3 +17,9 @@ map.set("n", "<leader>wv", "<CMD>vsplit<CR>", { desc = "split window vertically"
 
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Ansible
+vim.keymap.set("v", "<leader>te", function()
+    require("ansible").run()
+end, { buffer = true, silent = true })
+vim.keymap.set("n", "<leader>te", ":w<CR> :lua require('ansible').run()<CR>", { buffer = true, silent = true })

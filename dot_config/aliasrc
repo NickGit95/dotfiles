@@ -35,4 +35,5 @@ alias \
     gitc="git commit -m" \
     gitca="git commit --amend --no-edit" \
     gitp="git push" \
-    orphans="pacman -Qtdq | sudo pacman -Rns -"
+    orphans="pacman -Qtdq | sudo pacman -Rns -" \
+    update="paru -Syu && flatpak update"

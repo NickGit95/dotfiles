@@ -99,11 +99,15 @@ require("lspconfig").pyright.setup({
 require("lspconfig").bashls.setup({
     capabilities = capabilities,
 })
+require("lspconfig").ansiblels.setup({
+    capabilities = capabilities,
+})
 
 -- Linters
 require("lint").linters_by_ft = {
     sh = { "shellcheck" },
     python = { "pylint" },
+    ansible = { "ansible_lint" },
 }
 vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufReadPost" }, {
     callback = function()
@@ -117,6 +121,7 @@ require("conform").setup({
         lua = { "stylua" },
         python = { "black" },
         sh = { "shfmt" },
+        yaml = { "yamlfmt" },
         ["_"] = { "trim_whitespace" },
     },
     formatters = {
@@ -125,6 +130,9 @@ require("conform").setup({
         },
         stylua = {
             prepend_args = { "--indent-type", "Spaces" },
+        },
+        yamlfmt = {
+            prepend_args = { "-formatter", "indent=2,include_document_start=true,retain_line_breaks_single=true" },
         },
     },
     format_on_save = {

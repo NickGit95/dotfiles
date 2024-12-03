@@ -36,6 +36,7 @@ require("lazy").setup({
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
     "mfussenegger/nvim-lint",
+    "pearofducks/ansible-vim",
     {
         "stevearc/conform.nvim",
         opts = {},

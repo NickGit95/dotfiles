@@ -1,5 +1,8 @@
+---
 theme: main
 terminal: kitty
+packages_file: .chezmoidata/packages.yaml
+aurHelper: paru
 font:
   size: 14
   size_notifications: 12
