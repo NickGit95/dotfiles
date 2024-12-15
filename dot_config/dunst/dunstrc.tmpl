@@ -1,8 +1,8 @@
 {{- $colors := get .colors .theme }}
 [global]
     monitor = 1
-    width = 300
-    height = 300
+    width = (200, 300)
+    height = (50, 300)
     origin = top-right
     offset = 10x50
     scale = 0
@@ -34,9 +34,11 @@
     stack_duplicates = true
     hide_duplicate_count = false
     show_indicators = no
+    icon_corners = all
     icon_position = left
     min_icon_size = 0
     max_icon_size = 32
+    icon_theme = Papirus
     icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/
     sticky_history = yes
     history_length = 20
