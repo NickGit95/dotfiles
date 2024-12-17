@@ -18,7 +18,7 @@ def parse_wpctl_status():
     )
 
     # get the index of the Sinks line as a starting point
-    sinks_index = None
+    sinks_index = 0
     for index, line in enumerate(lines):
         if "Sinks:" in line:
             sinks_index = index

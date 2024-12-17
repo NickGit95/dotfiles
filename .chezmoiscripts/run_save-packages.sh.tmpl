@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-echo "packages:" > "{{ .chezmoi.sourceDir}}/{{ .packages_file }}"
-paru -Qqe | sort | sed 's/^/-  /' >> "{{ .chezmoi.sourceDir }}/{{ .packages_file }}"

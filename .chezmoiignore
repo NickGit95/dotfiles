@@ -1,2 +1,6 @@
 README.md
 README.org
+**/*.md
+_files/
+justfile
+legacy_script.sh
