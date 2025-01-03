@@ -52,18 +52,18 @@ def parse_wpctl_status():
 
 
 # get the list of sinks ready to put into wofi - highlight the current default sink
-output = ""
+OUTPUT = ""
 sink_list = parse_wpctl_status()
 for items in sink_list:
     if items["sink_name"].endswith(" - Default"):
-        output += f"☆ {items['sink_name']}\n"
+        OUTPUT += f"☆ {items['sink_name']}\n"
     else:
-        output += f"{items['sink_name']}\n"
+        OUTPUT += f"{items['sink_name']}\n"
 
 # Take the selected sink name and set it as the default sink
-runner = f"echo '{output}' | fuzzel -d -w 25 -l 3"
+RUNNER_COMMAND = f"echo '{OUTPUT}' | fuzzel -d -w 25 -l 3"
 runner_process = subprocess.run(
-    runner,
+    RUNNER_COMMAND,
     shell=True,
     encoding="utf-8",
     stdout=subprocess.PIPE,

@@ -5,6 +5,7 @@ amd-ucode
 ansible
 ansible-language-server
 ansible-lint
+archlinux-xdg-menu
 ark
 aspell
 aspell-en
@@ -43,6 +44,7 @@ gst-plugin-pipewire
 helvum
 hypridle
 hyprland
+hyprland-qtutils
 hyprlock
 hyprpaper
 imv
@@ -65,6 +67,7 @@ kscreen
 kscreenlocker
 ksshaskpass
 ksystemstats
+kvantum
 kwallet-pam
 kwayland
 kwin
@@ -112,6 +115,7 @@ paru-git-debug
 pass
 pass-otp
 pavucontrol
+pcmanfm-qt
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -144,6 +148,7 @@ python-pylint
 qbittorrent
 qemu-full
 qqc2-breeze-style
+qt5ct
 qt5-wayland
 qt6ct
 qt6-wayland

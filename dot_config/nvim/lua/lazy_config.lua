@@ -31,6 +31,13 @@ require("lazy").setup({
         config = true,
     },
 
+    -- Surround
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+    },
+
     -- LSP linters and formatters
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
