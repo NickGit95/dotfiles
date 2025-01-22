@@ -1,2 +1,2 @@
 [Context]
-filesystems=/games/steam;xdg-config/MangoHud:ro;
+filesystems=xdg-config/MangoHud:ro;xdg-documents

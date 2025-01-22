@@ -2,6 +2,8 @@ adobe-source-han-sans-jp-fonts
 adobe-source-sans-fonts
 alsa-utils
 amd-ucode
+android-sdk-platform-tools
+android-tools
 ansible
 ansible-language-server
 ansible-lint
@@ -15,6 +17,7 @@ base-devel
 bash-language-server
 bleachbit
 bluedevil
+bluez-utils
 brave-bin
 breeze
 breeze-gtk
@@ -24,6 +27,7 @@ chaotic-keyring
 chaotic-mirrorlist
 chezmoi
 cmake
+cyme
 discover
 dnsmasq
 dolphin
@@ -31,11 +35,13 @@ drkonqi
 dunst
 efibootmgr
 emacs
+exfat-utils
 fd
 firefox
 flatpak-kcm
 freetube-bin
 fuzzel
+gamemode
 git
 glow
 gnome-keyring
@@ -76,6 +82,7 @@ layer-shell-qt
 lib32-mesa
 lib32-vulkan-radeon
 libappindicator-gtk3
+libgit2
 libkscreen
 libksysguard
 libplasma
@@ -160,6 +167,7 @@ sddm-kcm
 shellcheck
 shfmt
 slurp
+steam
 stylua
 syncthing
 systemsettings
