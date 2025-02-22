@@ -12,12 +12,12 @@ font:
 
 colors:
   "main":
-    "cyan": "68F2E0"
-    "green": "6CE05C"
-    "pink": "FF9BF5"
-    "purple": "C495F0"
-    "red": "F01578"
-    "yellow": "F3F79E"
+    "color_1": "C495F0" # Main accents(Purple)
+    "color_2": "6CE05C" # Good accents (green mostly)
+    "color_3": "FF9BF5" # Different accent (pink)
+    "color_4": "68F2E0" # (cyan)
+    "color_5": "F01578" # Bad accents (red mostly)
+    "color_6": "F3F79E" # Neutral accents (Yellow mostly)
     "foreground": "4D4D4D"
     "background": "4D4D4D"
     "foreground_white": "FFFFFF"

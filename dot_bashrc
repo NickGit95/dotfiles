@@ -63,6 +63,8 @@ bind "set completion-ignore-case on"
 export SDL_GAMECONTROLLERCONFIG="
 030000007e0500001920000011810000,Nintendo N64 Controller,platform:Linux,crc:d670,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
 030000007e0500001920000011810000,Nintendo N64 Controller,platform:Linux,crc:d670,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
+050000007e0500001920000001800000,N64 Controller,platform:Linux,crc:5e1c,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
+050000007e0500001920000001800000,N64 Controller,platform:Linux,crc:5e1c,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
 "
 
 # Set the export path
