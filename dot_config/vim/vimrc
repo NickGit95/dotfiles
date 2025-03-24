@@ -1,0 +1,21 @@
+""""""""""""""""""""""""""""""
+"       _                    "
+"__   _(_)_ __ ___  _ __ ___ "
+"\ \ / / | '_ ` _ \| '__/ __|"
+" \ V /| | | | | | | | | (__ "
+"  \_/ |_|_| |_| |_|_|  \___|"
+""""""""""""""""""""""""""""""
+
+" General settings
+set number relativenumber
+set shiftwidth=4
+set t_Co=256
+syntax enable
+
+" Map jj to Esc
+imap jj <Esc>
+
+set termguicolors
+
+" Delete trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
