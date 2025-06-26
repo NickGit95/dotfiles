@@ -42,6 +42,7 @@ fd
 firefox
 flatpak-kcm
 freetube-bin
+fusee-nano
 fuzzel
 gamemode
 gamescope
@@ -84,6 +85,7 @@ kwin
 kwrited
 lact
 layer-shell-qt
+lib32-gamemode
 lib32-mesa
 lib32-vulkan-radeon
 libappindicator-gtk3
@@ -178,7 +180,9 @@ steam
 stylua
 syncthing
 systemsettings
+termusic
 thunderbird
+tk
 tldr
 ttf-0xproto-nerd
 ttf-3270-nerd
@@ -239,6 +243,7 @@ ttf-victor-mono-nerd
 ttf-zed-mono-nerd
 tutanota-desktop-bin
 udiskie
+umu-launcher
 unrar
 unzip
 vim
