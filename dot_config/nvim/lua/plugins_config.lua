@@ -92,16 +92,9 @@ cmp.setup({
 -- LSP
 require("mason-lspconfig").setup()
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-require("lspconfig").pyright.setup({
-    capabilities = capabilities,
-})
-require("lspconfig").bashls.setup({
-    capabilities = capabilities,
-})
-require("lspconfig").ansiblels.setup({
-    capabilities = capabilities,
-})
+vim.lsp.enable("pyright")
+vim.lsp.enable("bashls")
+vim.lsp.enable("ansiblels")
 
 -- Linters
 require("lint").linters_by_ft = {
@@ -138,24 +131,6 @@ require("conform").setup({
     format_on_save = {
         timeout_ms = 500,
         lsp_fallback = false,
-    },
-})
-
--- nvim-treesitter
-require("nvim-treesitter.configs").setup({
-    ensure_installed = "all",
-    sync_install = false,
-    ignore_install = { "" },
-    highlight = {
-        enable = true,
-        disable = { "" },
-        additional_vim_regex_highlighting = true,
-    },
-    indent = { enable = true, disable = { "yaml" } },
-    rainbow = {
-        enable = true,
-        extended_mode = true,
-        max_file_lines = nill,
     },
 })
 

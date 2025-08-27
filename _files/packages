@@ -41,7 +41,7 @@ fastfetch
 fd
 firefox
 flatpak-kcm
-freetube-bin
+freetube-git
 fusee-nano
 fuzzel
 gamemode
@@ -74,6 +74,7 @@ kitty
 kmenuedit
 kpipewire
 krdp
+krita
 kscreen
 kscreenlocker
 ksshaskpass
@@ -86,6 +87,7 @@ kwrited
 lact
 layer-shell-qt
 lib32-gamemode
+lib32-libjpeg-turbo
 lib32-mesa
 lib32-vulkan-radeon
 libappindicator-gtk3
@@ -184,6 +186,7 @@ termusic
 thunderbird
 tk
 tldr
+torbrowser-launcher
 ttf-0xproto-nerd
 ttf-3270-nerd
 ttf-agave-nerd

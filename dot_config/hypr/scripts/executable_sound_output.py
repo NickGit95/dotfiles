@@ -3,7 +3,8 @@ import subprocess
 import sys
 
 
-# function to parse output of command "wpctl status" and return a dictionary of sinks with their id and name.
+# function to parse output of command "wpctl status" and return a dictionary of
+# sinks with their id and name.
 def parse_wpctl_status():
     # Execute the wpctl status command and store the output in a variable.
     output = str(subprocess.check_output("wpctl status", shell=True, encoding="utf-8"))
