@@ -38,6 +38,9 @@ dunst
 efibootmgr
 exfat-utils
 fastfetch
+fcitx5-configtool
+fcitx5-mozc
+fcitx5-qt
 fd
 firefox
 flatpak-kcm
@@ -58,6 +61,7 @@ hyprland-qtutils
 hyprlock
 hyprpaper
 imv
+itgmania-bin
 jq
 just
 kactivitymanagerd

@@ -75,24 +75,9 @@ require("lazy").setup({
     -- treesitter stuff
     {
         "nvim-treesitter/nvim-treesitter",
-        lazy = vim.fn.argc(-1) == 0,
-        branch = "main",
+        branch = "master",
+        lazy = false,
         build = ":TSUpdate",
-        config = function()
-            local configs = require("nvim-treesitter.configs")
-
-            configs.setup({
-                ensure_installed = "all",
-                sync_install = false,
-                ignore_install = { "" },
-                highlight = {
-                    enable = true,
-                    disable = { "" },
-                    additional_vim_regex_highlighting = true,
-                },
-                indent = { enable = true, disable = { "yaml" } },
-            })
-        end,
     },
 
     -- which key
