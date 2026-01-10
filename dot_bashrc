@@ -37,6 +37,9 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 export PYLINTRC="$XDG_CONFIG_HOME"/pylint/pylintrc
 mkdir -p "$XDG_DATA_HOME"/{bash,wine,cargo}
+export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME"/npm/config/npm-init.js
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
 
 # SHOPT
 shopt -s cdspell
@@ -55,6 +58,7 @@ export EDITOR="nvim"
 export VISUAL="emacsclient -c -a emacs"
 export NO_AT_BRIDGE=1
 export PASSWORD_STORE_CLIP_TIME=25
+export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json"
 
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"

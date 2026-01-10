@@ -1,4 +1,6 @@
 [Shortcuts]
 KisToolSelectContiguous=R
-erase_action=none
-previous_preset=E
+KisToolSelectOutline=G
+KritaFill/KisToolGradient=none
+deselect=Ctrl+D
+previous_preset=none
