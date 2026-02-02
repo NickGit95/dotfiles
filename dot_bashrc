@@ -59,17 +59,10 @@ export VISUAL="emacsclient -c -a emacs"
 export NO_AT_BRIDGE=1
 export PASSWORD_STORE_CLIP_TIME=25
 export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json"
+export SDL_VIDEODRIVER=wayland
 
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
-
-# Controller config
-export SDL_GAMECONTROLLERCONFIG="
-030000007e0500001920000011810000,Nintendo N64 Controller,platform:Linux,crc:d670,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
-030000007e0500001920000011810000,Nintendo N64 Controller,platform:Linux,crc:d670,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
-050000007e0500001920000001800000,N64 Controller,platform:Linux,crc:5e1c,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
-050000007e0500001920000001800000,N64 Controller,platform:Linux,crc:5e1c,a:b0,b:b1,guide:b12,start:b11,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b5,leftx:a0,lefty:a1,-rightx:b4,+rightx:b2,-righty:b10,+righty:b3,lefttrigger:b8,righttrigger:b9,
-"
 
 # Set the export path
 export PATH=$PATH:/var/lib/flatpak/exports/bin:~/.local/share/flatpak/exports/bin
