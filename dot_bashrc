@@ -55,11 +55,10 @@ export TERM="xterm-256color"
 export HISTCONTROL=ignoredups:erasedups
 export ALTERNATE_EDITOR=""
 export EDITOR="nvim"
-export VISUAL="emacsclient -c -a emacs"
 export NO_AT_BRIDGE=1
 export PASSWORD_STORE_CLIP_TIME=25
-export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json"
 export SDL_VIDEODRIVER=wayland
+export SDL_VIDEO_DRIVER=wayland
 
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"

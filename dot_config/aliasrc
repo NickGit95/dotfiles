@@ -21,6 +21,7 @@ alias \
     cp="cp -iv" \
     mv="mv -iv" \
     mkd="mkdir -pv" \
+    mpvgui="mpv --profile=builtin-pseudo-gui" \
     shred="shred -u" \
     pdel="sudo pacman -Rsn" \
     hdel="paru -Rns" \

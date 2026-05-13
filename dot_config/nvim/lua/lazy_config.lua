@@ -38,6 +38,10 @@ require("lazy").setup({
         event = "VeryLazy",
     },
 
+    -- Go
+    "ray-x/go.nvim",
+    "ray-x/guihua.lua",
+
     -- LSP linters and formatters
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
