@@ -1,4 +1,5 @@
-require("lazy_config")
-require("plugins_config")
+require("packages")
 require("keymaps")
+require("mini_config")
+require("plugins_config")
 require("options")

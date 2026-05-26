@@ -21,7 +21,7 @@ o.tabstop = 4
 o.termguicolors = true
 
 vim.cmd([[
-    colorscheme eldritch
+    colorscheme miniwinter
     syntax on
     imap jj <Esc>
     set iskeyword+=-

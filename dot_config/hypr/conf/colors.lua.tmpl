@@ -1,0 +1,13 @@
+{{- $colors := get .colors .theme }}
+local colors = {
+    background = "rgb({{- get $colors "background"}})",
+    foreground = "rgb({{- get $colors "foreground"}})",
+    color_1 = "rgb({{- get $colors "color_1"}})",
+    color_2 = "rgb({{- get $colors "color_2"}})",
+    color_3 = "rgb({{- get $colors "color_3"}})",
+    color_4 = "rgb({{- get $colors "color_4"}})",
+    color_5 = "rgb({{- get $colors "color_5"}})",
+    color_6 = "rgb({{- get $colors "color_6"}})",
+}
+
+return colors

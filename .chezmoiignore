@@ -4,3 +4,4 @@ README.org
 _files/
 justfile
 legacy_script.sh
+.luarc.json

@@ -15,6 +15,7 @@ aspell-es
 base
 base-devel
 bash-language-server
+bazecor
 bleachbit
 blueberry
 bluedevil
@@ -44,7 +45,7 @@ fcitx5-qt
 fd
 firefox
 flatpak-kcm
-freetube-bin
+freetube
 fusee-nano
 fuzzel
 gamemode
@@ -108,6 +109,7 @@ librewolf-bin
 linux
 linux-firmware
 linux-lts
+lua-language-server
 man-db
 mangohud
 mesa
